@@ -1,0 +1,51 @@
+{
+	"name": "ivan/mycms",
+	"description": "php cms based on mvc pattern",
+	"type": "project",
+	"keywords": [
+		"php cms"
+	],
+	"homepage": "https://github.com/evan4/mycms",
+	"license": "MIT",
+	"authors": [{
+		"name": "Ivan Orlov",
+		"email": "evan4mc@gmail.com",
+		"role": "developer"
+	}],
+	"support": {
+		"source": "https://github.com/evan4/mycms.git"
+	},
+	"require": {
+		"php": "^7.3",
+		"doctrine/orm": "^2.6.2",
+		"pgrimaud/instagram-user-feed": "^6.6",
+		"samdark/sitemap": "^2.2",
+		"swiftmailer/swiftmailer": "^6.0",
+		"symfony/apache-pack": "^1.0",
+		"symfony/config": "^5.2",
+		"symfony/http-kernel": "^5.2",
+		"symfony/routing": "^5.2",
+		"symfony/yaml": "^5.2",
+		"twig/twig": "^3.0",
+		"verot/class.upload.php": "^2.0",
+		"vlucas/phpdotenv": "^5.3"
+	},
+	"autoload": {
+		"psr-4": {
+			"Mycms\\": "coremy/",
+			"core\\": "core/",
+			"App\\": "app/",
+			"controllers\\": "controllers/",
+			"models\\": "models/"
+
+		},
+		"files": ["coremy/helpers.php"]
+	},
+	"config": {
+		"preferred-install": "dist",
+		"sort-packages": true,
+		"optimize-autoloader": true
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}

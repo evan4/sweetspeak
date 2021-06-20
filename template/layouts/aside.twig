@@ -1,0 +1,71 @@
+<aside class="aside">
+  <p class="aside__caption">Популярные категории:</p>
+  <ul class="categories" >
+  {% for category in session.popularCategories %}
+    <li class="categories__item">
+    {% if current_uri == "{{category.url}}"  %}
+      <span class="categories__link">
+        <span class="categories__text">{{category.title}}</span>
+        <span class="categories__amount">+{{category.total}}</span>
+      </span>
+    {% else %}
+     <a href="{{category.url}}" class="categories__link">
+        <span class="categories__text">{{category.title}}</span>
+        <span class="categories__amount">+{{category.total}}</span>
+      </a>
+    {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+  <p class="aside__caption">Мы в соцсетях:</p>
+    <ul class="socials" >
+      <li class="socials__item">
+        <a href="{{ constant('TELEGRAM') }}" rel="nofollow"
+        class="socials__link socials__link_telegram"></a>
+        {#<span id="numTelegramFollowers"></span>#}
+      </li>
+      <li class="socials__item">
+        <a href="{{constant('FACEBOOK') }}" rel="nofollow"
+        class="socials__link socials__link_facebook"></a>
+        {#<span id="numFacebookFollowers"></span>#}
+      </li>
+      <li class="socials__item">
+        <a href="{{constant('TWITTER')}}" rel="nofollow"
+        class="socials__link socials__link_twitter"></a>
+        {#<span id="numTwitterFollowers"></span>#}
+      </li>
+      <li class="socials__item">
+        <a href="{{constant('VK')}}" rel="nofollow"
+        class="socials__link socials__link_vk"></a>
+       {# <span id="numVkFollowers"></span>#}
+      </li>
+      <li class="socials__item">
+        <a href="{{constant('INSTAGRAM')}}" rel="nofollow"
+        class="socials__link socials__link_instagram"></a>
+        {#<span id="numInstagramFollowers"></span>#}
+      </li>
+    </ul>
+  <p class="aside__caption">Самые обсуждаемые:</p>
+  <ul class="posts-list">
+    {% for popularPost in session.popularPosts %}
+    <li class="posts-list__item">
+        <img src="{{popularPost.photo.medium}}" alt="post" class="posts-list__image">
+        <div class="posts-list__content">
+        {% if current_uri == popularPost.url  %}
+          <span class="posts-list__text">{{popularPost.title|slice(0, 60)}}</span>
+        {% else %}
+          <a href="{{popularPost.url}}" class="posts-list__text">{{popularPost.title|slice(0, 60)}}</a>
+        {% endif %}
+        <span class="posts-list__author">
+            <a href="{{popularPost.author_url}}">{{popularPost.author}}</a>
+        </span class="posts-list__text">
+        </div>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="aside__caption">Наш Instagram:</p>
+  <div class="aside-gallery aside-gallery-instagram"> </div>
+</aside>
+{# <div class="aside-proposal">
+  <span>Пример баннера</span>
+</div> #}

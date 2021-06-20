@@ -1,0 +1,32 @@
+.top-menu {
+  margin-top: 20px;
+  
+  border-bottom: 1px solid rgba(196, 196, 196, 0.5);
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 26px;
+    color: $color-black;
+    text-transform: uppercase;
+    padding-bottom: 13px;
+    border-bottom: 1px solid transparent;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    &_active, &:hover {
+      
+      color: $color-red-menu;
+      border-bottom: 1px solid $color-red-menu;
+    }
+  }
+}

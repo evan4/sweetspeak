@@ -1,0 +1,586 @@
+{% include 'layouts/header.twig' with {'title': title,
+  'description': description} %}
+  
+  <div class="top-images__wrap">
+    <section class="top-images" itemscope itemtype="https://schema.org/ItemList">
+  
+      <div class="top-images-left">
+        <div class="top-images__item" itemprop="itemListElement" itemscope 
+        itemtype="https://schema.org/Article"
+        style="background-image: url({{session.popularPosts.0.photo.large}});">
+          <div class="similars-image-top similars-image-top_small">
+            <span class="similars-image-top__text">{{session.popularPosts.0.category}}</span>
+          </div>
+          <a href="{{session.popularPosts.0.url}}" itemprop="headline" 
+            class="big-image__caption big-image__caption_small">{{session.popularPosts.0.title|slice(0, 43)}}</a>
+          <div class="big-image-bottom big-image-bottom_small">
+            <ul class="big-image-list">
+              <li class="big-image-list__item big-image-list__item_oval big-image-list__item_visibility">{{session.popularPosts.0.see}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_oval big-image-list__item_heart">{{session.popularPosts.0.likes}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_oval big-image-list__item_comments big-image-list__item_small">{{session.popularPosts.0.comments_count}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_author">
+                <a href="{{session.popularPosts.0.author_url}}" itemprop="author" itemscope 
+                itemtype="https://schema.org/Person" >{{session.popularPosts.0.author}}</a>
+              </li>
+              <li class="big-image-list__item big-image-list__item_date">
+                <time itemprop="datePublished" datetime="{{session.popularPosts.0.date}}>">{{session.popularPosts.0.date}}</time>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="top-images__item"  itemprop="itemListElement" itemscope itemtype="https://schema.org/Article"
+       style="background-image: url({{session.popularPosts.1.photo.large}});">
+          <div class="similars-image-top similars-image-top_small">
+            <span class="similars-image-top__text">{{session.popularPosts.1.category}}</span>
+          </div>
+          <a href="{{session.popularPosts.1.url}}" itemprop="headline" 
+          class="big-image__caption big-image__caption_small">{{session.popularPosts.0.title|slice(0, 43)}}</a>
+          <div class="big-image-bottom big-image-bottom_small">
+            <ul class="big-image-list">
+              <li class="big-image-list__item big-image-list__item_oval
+                big-image-list__item_visibility">{{session.popularPosts.1.see}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_oval big-image-list__item_heart">{{session.popularPosts.1.likes}}<i></i></li>
+              <li
+                class="big-image-list__item big-image-list__item_oval big-image-list__item_comments 
+                big-image-list__item_small">{{session.popularPosts.0.comments_count}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_author">
+                <a href="{{session.popularPosts.1.author_url}}" itemprop="author" itemscope 
+                itemtype="https://schema.org/Person" >{{session.popularPosts.1.author}}</a>
+              </li>
+              <li class="big-image-list__item big-image-list__item_date">
+                <time itemprop="datePublished" datetime="{{session.popularPosts.1.date}}>">{{session.popularPosts.1.date}}</time>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="big-image big-image_main"  itemprop="itemListElement" itemscope itemtype="https://schema.org/Article"
+       style="background-image: url({{session.popularPosts.2.photo.large}});">
+        <div class="similars-image-top similars-image-top_big">
+          <span class="similars-image-top__text">{{session.popularPosts.2.category}}</span>
+        </div>
+        <a href="{{session.popularPosts.2.url}}" itemprop="headline" 
+        class="big-image__caption big-image__caption_main">{{session.popularPosts.2.title|slice(0, 45)}}</a>
+        <div class="big-image-bottom big-image-bottom_big">
+          <ul class="big-image-list">
+            <li class="big-image-list__item big-image-list__item_oval big-image-list__item_visibility">{{session.popularPosts.2.see}}<i></i></li>
+            <li class="big-image-list__item big-image-list__item_oval big-image-list__item_heart">{{session.popularPosts.2.likes}}<i></i></li>
+            <li class="big-image-list__item big-image-list__item_oval big-image-list__item_comments">{{session.popularPosts.2.comments_count}}<i></i></li>
+            <li class="big-image-list__item big-image-list__item_author">
+              Автор: <a href="{{session.popularPosts.2.author_url}}" itemprop="author" itemscope itemtype="https://schema.org/Person">{{session.popularPosts.2.author}}</a>
+            </li>
+            <li class="big-image-list__item big-image-list__item_date big-image-list__item_right">
+              <time itemprop="datePublished" 
+                  datetime="{{session.popularPosts.2.date}}">{{session.popularPosts.2.date}}</time>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="top-images-right">
+        <div class="top-images__item"  itemprop="itemListElement" itemscope itemtype="https://schema.org/Article"
+        style="background-image: url({{session.popularPosts.3.photo.large}});">
+          <div class="similars-image-top similars-image-top_small">
+            <span class="similars-image-top__text">{{session.popularPosts.3.category}}</span>
+          </div>
+          <a href="{{session.popularPosts.3.url}}" itemprop="headline" 
+          class="big-image__caption big-image__caption_small">{{session.popularPosts.3.title|slice(0, 43)}}</a>
+          <div class="big-image-bottom big-image-bottom_small">
+            <ul class="big-image-list">
+              <li class="big-image-list__item big-image-list__item_oval
+                big-image-list__item_visibility">{{session.popularPosts.3.see}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_oval big-image-list__item_heart">{{session.popularPosts.3.likes}}<i></i></li>
+              <li
+                class="big-image-list__item big-image-list__item_oval big-image-list__item_comments 
+                big-image-list__item_small">{{session.popularPosts.3.comments_count}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_author">
+              <a href="{{session.popularPosts.3.author_url}}" itemprop="author" itemscope 
+              itemtype="https://schema.org/Person">{{session.popularPosts.3.author}}</a>
+              <li class="big-image-list__item big-image-list__item_date">
+                <time itemprop="datePublished" 
+                  datetime="{{session.popularPosts.3.date}}">{{session.popularPosts.3.date}}</time>  
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="top-images__item"  itemprop="itemListElement" itemscope itemtype="https://schema.org/Article"
+          style="background-image: url({{session.popularPosts.4.photo.large}});">
+          <div class="similars-image-top similars-image-top_small">
+            <span class="similars-image-top__text">{{session.popularPosts.4.category}}</span>
+          </div>
+          <a href="{{session.popularPosts.4.url}}" itemprop="headline" 
+            class="big-image__caption big-image__caption_small">{{session.popularPosts.4.title|slice(0, 43)}}</a>
+          <div class="big-image-bottom big-image-bottom_small">
+            <ul class="big-image-list">
+              <li class="big-image-list__item big-image-list__item_oval
+                big-image-list__item_visibility">{{session.popularPosts.4.see}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_oval big-image-list__item_heart">{{session.popularPosts.4.likes}}<i></i></li>
+              <li
+                class="big-image-list__item big-image-list__item_oval big-image-list__item_comments 
+                big-image-list__item_small">{{session.popularPosts.4.comments_count}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_author">
+              <a href="{{session.popularPosts.4.author_url}}" itemprop="author" itemscope 
+              itemtype="https://schema.org/Person">{{session.popularPosts.4.author}}</a>
+              <li class="big-image-list__item big-image-list__item_date">
+                <time itemprop="datePublished" 
+                  datetime="{{session.popularPosts.4.date}}">{{session.popularPosts.4.date}}</time> 
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    </section>
+  </div>
+  <div class="wrap wrap_main">
+   <div class="col-9">
+    {% set category = categories_info|first %}
+      <div class="top-main">
+         
+          <h1 class="caption caption_h1 top-main__caption top-main__caption_dating">
+            <a href="/articles/{{category.url}}">{{category.title}}</a>
+          </h1>
+          <div class="top-main-buttons">
+            <a href="/articles/{{category.url}}" 
+            class="button button_outline top-main-buttons__more">Читать все <span
+                class="categories__amount">{{category.total}}+</span>
+            </a>
+          </div>
+        </div>
+        <ul class="top-menu">
+          <li class="top-menu__item">
+            <span data-url="category={{category.id}}"  id="tab.dating" 
+            class="top-menu__link top-menu__link_active">Все</span>
+          </li>
+        {% for subcategory in category.subcategory %}
+          <li class="top-menu__item">
+            <span data-url="category={{subcategory.id}}"  id="tab.dating-{{loop.index0}}"
+             class="top-menu__link">{{subcategory.name}}</span>
+          </li>
+        {% endfor %}
+        </ul>
+        <ul class="similars similars_margin tabcontent" itemscope itemtype="https://schema.org/ItemList">
+          {% for post in category.posts %}
+            <li class="similars__item"  itemprop="itemListElement" itemscope 
+            itemtype="https://schema.org/Article">
+            <div class="similars-image" style="background-image: url({{post.photo.medium}});">
+              <div class="similars-image-top">
+                <span class="similars-image-top__text">{{post.category}}</span>
+              </div>
+              <ul class="similars-list">
+                <li class="similars-list__item similars-list__item_visibility">{{post.see}}<i></i></li>
+                <li class="similars-list__item similars-list__item_heart">{{post.likes}}><i></i></li>
+                <li class="similars-list__item similars-list__item_dislike">{{post.dislikes}}<i></i></li>
+                <li class="similars-list__item similars-list__item_comments">{{post.comments_count}}><i></i></li>
+              </ul>
+            </div>
+            <a href="{{post.url}}" itemprop="headline" class="similars__caption">{{post.title}}</a>
+            <p class="similars__text">{{post.snippet}}</p>
+            <ul class="similars-details">
+              <li class="similars-details__item">
+                <a href="{{post.author_url}}" itemprop="author" itemscope 
+                itemtype="https://schema.org/Person">{{post.author}}</a>
+              </li>
+              <li class="similars-details__item similars-details__item_history"><i></i> 
+                <time itemprop="datePublished"  datetime="{{post.date}}">{{post.date}}</time>  
+              </li>
+            </ul>
+          </li>
+          {% endfor %}
+          </ul>
+
+        {#  <div class="apps">
+          <h2 class="caption caption_h2 apps__caption">Скачивайте наше приложение на мобильные устройства:</h2>
+          <ul class="apps-list" >
+            <li class="apps-list__item">
+              <a href="#" class="apps-list__link">
+                <i class="apps-list__appstore"></i>
+                <span class="apps-list__text">
+                  <span>Скачать</span> в App Store
+                </span>
+              </a>
+            </li>
+            <li class="apps-list__item">
+              <a href="#" class="apps-list__link">
+                <i class="apps-list__googleplay"></i>
+                <span class="apps-list__text">
+                  <span>Скачать</span> в Google Play
+                </span>
+              </a>
+            </li>
+          </ul>
+          <div class="apps__bg"></div>
+        </div>#}
+        <div class="top-main">
+        {% set category = categories_info|slice(1, 1)|first %}
+          <h1 class="caption caption_h1 top-main__caption top-main__caption_relations">
+            <a href="/articles/{{category.url}}">{{category.title}}</a>
+          </h1>
+          <div class="top-main-buttons">
+            <a href="/articles/{{category.url}}" class="button button_outline top-main-buttons__more">Читать все <span
+                class="categories__amount">{{category.total}}+</span>
+            </a>
+          </div>
+        </div>
+        <ul class="top-menu">
+          <li class="top-menu__item">
+            <span data-url="category={{category.id}}" id="tab.relations" 
+            class="top-menu__link top-menu__link_active">Все</span>
+          </li>
+        {% for subcategory in category.subcategory %}
+          <li class="top-menu__item">
+            <span data-url="category={{subcategory.id}}" 
+              id="tab.relations-{{loop.index0}}" class="top-menu__link">{{subcategory.name}}</span>
+          </li>
+        {% endfor %}
+        </ul>
+         <div class="top-images-center tabcontent" itemscope itemtype="https://schema.org/ItemList">
+         {% for post in category.posts %}
+          <div class="similars-image"  itemprop="itemListElement" itemscope itemtype="https://schema.org/Article"
+          style="background-image: url({{post.photo.large}});">
+            <div class="similars-image-top similars-image-top_tiny">
+              <span class="similars-image-top__text similars-image-top__text_blue">{{post.category}}</span>
+            </div>
+            <a href="{{post.url}}" itemprop="headline" class="big-image__caption big-image__caption_center">{{post.title}}</a>
+            <div class="big-image-bottom big-image-bottom_small big-image-bottom_center">
+              <ul class="big-image-list big-image-list_center">
+                <li class="big-image-list__item big-image-list__item_oval big-image-list__item_visibility">{{post.see}}<i></i></li>
+                <li class="big-image-list__item big-image-list__item_oval big-image-list__item_heart">{{post.likes}}<i></i></li>
+                <li class="big-image-list__item big-image-list__item_oval big-image-list__item_dislike">{{post.dislikes}}<i></i></li>
+                <li class="big-image-list__item big-image-list__item_oval big-image-list__item_comments 
+                  big-image-list__item_small">{{post.comments_count}}<i></i>
+                </li>
+                <li>
+                  <ul class="big-image-list big-image-list_sub">
+                    <li class="big-image-list__item big-image-list__item_author">
+                      <a href="{{post.author_url}}" itemprop="author" itemscope itemtype="https://schema.org/Person">{{post.author}}</a>
+                    </li>
+                    <li class="big-image-list__item big-image-list__item_date"> 
+                      <time itemprop="datePublished" 
+                      datetime="{{post.date}}">{{post.date}}</time>  
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="top-main">
+        {% set category = categories_info|slice(2, 1)|first %}
+          <h1 class="caption caption_h1 top-main__caption 
+          top-main__caption_interesting">
+          <a href="/articles/{{category.url}}">{{category.title}}</a>
+        </h1>
+        <div class="top-main-buttons">
+            <a href="/articles/{{category.url}}" class="button button_outline top-main-buttons__more">Читать все <span
+                class="categories__amount">{{category.total}}+</span>
+            </a>
+          </div>
+        </div>
+        <ul class="top-menu">
+          <li class="top-menu__item">
+            <span data-url="category={{category.id}}" id="tab.interesting" 
+            class="top-menu__link top-menu__link_active">Все</span>
+          </li>
+         {% for subcategory in category.subcategory %}
+          <li class="top-menu__item">
+            <span data-url="category={{subcategory.id}}" 
+              id="tab.interesting-{{loop.index0}}" class="top-menu__link">{{subcategory.name}}</span>
+          </li>
+        {% endfor %}
+        </ul>
+         
+        <div class="top-images-center tabcontent" itemscope itemtype="https://schema.org/ItemList">
+          {% if category.posts|length > 0 %}
+            {% set first = category.posts|first %}
+            <div class="similars-image" itemprop="itemListElement" itemscope itemtype="https://schema.org/Article" 
+              style="background-image: url({{first.photo.large}});">
+            <div class="similars-image-top similars-image-top_tiny">
+              <span class="similars-image-top__text similars-image-top__text_pink">{{first.category}}</span>
+            </div>
+            <ul class="similars-list similars-list_big">
+              <li class="similars-list__item similars-list__item_visibility">{{first.see}}<i></i></li>
+              <li class="similars-list__item similars-list__item_heart">{{first.likes}}<i></i></li>
+              <li class="similars-list__item similars-list__item_dislike">{{first.dislikes}}<i></i></li>
+              <li class="similars-list__item similars-list__item_comments">{{first.comments_count}}<i></i></li>
+            </ul>
+            <a href="{{first.url}}" itemprop="headline" class="big-image__caption big-image__caption_center">{{first.title}}</a>
+
+            <div class="big-image-bottom big-image-bottom_small">
+              <ul class="big-image-list big-image-list-left">
+                <li class="big-image-list__item big-image-list__item_author">
+                  <a href="{{first.author_url}}" itemprop="author" itemscope itemtype="https://schema.org/Person">{{first.author}}</a>
+                </li>
+                <li class="big-image-list__item big-image-list__item_date">
+                  <time itemprop="datePublished" 
+                      datetime="{{first.date}}">{{first.date}}</time>  
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="similars-image similars-image_center">
+          {% set posts = category.posts|slice(1, length) %}
+
+          {% for key, post in posts %}
+             <div  itemprop="itemListElement" itemscope itemtype="https://schema.org/Article"
+            class="similars-image-block {{ loop.index0 == 0 ? 'similars-image-block_first' : null }}">
+              <div class="similars-image-header">
+                <ul class="similars-list similars-list_center">
+                  <li class="similars-list__item similars-list__item_center
+                similars-list__item_visibility">{{post.see}}<i></i></li>
+                  <li class="similars-list__item similars-list__item_center similars-list__item_heart">{{post.likes}}<i></i></li>
+                  <li class="similars-list__item similars-list__item_center similars-list__item_dislike">{{post.dislikes}}<i></i></li>
+                  <li class="similars-list__item  similars-list__item_center similars-list__item_comments">{{post.comments_count}}<i></i></li>
+                </ul>
+                <div class="similars-image-top similars-image-top_tiny similars-image-top_black">
+                  <span class="similars-image-top__text similars-image-top__text_pink">{{post.category}}</span>
+                </div>
+              </div>
+              <a href="{{post.url}}" itemprop="headline" class="similars-image__caption">{{post.title}}</a>
+              <p class="similars-image__text">{{post.snippet}}</p>
+              <p class="similars-image__author">Автор: <a href="{{post.author_url}}" itemprop="author" itemscope itemtype="https://schema.org/Person">{{post.author}}</a>
+              </p>
+            </div>
+          {% endfor %}
+            </div>
+          {% endif %}
+          
+          </div>
+
+
+      </div>
+      <div class="col-3 col-right">
+          {% include 'layouts/aside.twig' %}
+      </div>
+    </div>
+    <div class="wrap">
+      {% set category = categories_info|slice(3, 1)|first %}
+      <div class="top-main">
+        <h1 class="caption caption_h1 top-main__caption top-main__caption_fetish">
+          <a href="/articles/{{category.url}}">{{category.title}}</a>
+        </h1>
+        <div class="top-main-buttons">
+          <a href="/articles/{{category.url}}" class="button button_outline top-main-buttons__more">Читать все <span
+              class="categories__amount">{{category.total}}+</span>
+          </a>
+        </div>
+      </div>
+      <ul class="top-menu">
+        <li class="top-menu__item">
+          <span data-url="category={{category.id}}" id="tab.fetish" 
+          class="top-menu__link top-menu__link_active">Все</span>
+        </li>
+       {% for subcategory in category.subcategory %}
+          <li class="top-menu__item">
+            <span data-url="category={{subcategory.id}}" 
+              id="tab.fetish-{{loop.index0}}" class="top-menu__link">{{subcategory.name}}</span>
+          </li>
+        {% endfor %}
+      </ul>
+
+       <div class="top-images-center top-images-center_four tabcontent" itemscope itemtype="https://schema.org/ItemList">
+       {% for post in category.posts %}
+          <div class="similars-image"  itemprop="itemListElement" itemscope itemtype="https://schema.org/Article"
+        style="background-image: url({{post.photo.large}});">
+          <div class="similars-image-top similars-image-top_tiny">
+            <span class="similars-image-top__text similars-image-top__text_blue">{{post.category}}</span>
+          </div>
+          <a href="{{post.url}}" itemprop="headline" class="big-image__caption big-image__caption_four">{{post.title}}</a>
+          <div class="big-image-bottom big-image-bottom_small big-image-bottom_center">
+            <ul class="big-image-list big-image-list_center">
+              <li class="big-image-list__item big-image-list__item_visibility">{{post.see}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_heart">{{post.likes}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_dislike">{{post.dislikes}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_comments 
+              big-image-list__item_small">{{post.comments_count}}<i></i></li>
+              <li>
+                <ul class="big-image-list big-image-list_sub big-image-list_once">
+                  <li class="big-image-list__item big-image-list__item_author">
+                    <a href="{{post.author_url}}" itemprop="author" itemscope 
+                    itemtype="https://schema.org/Person">{{post.author}}</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+       {% endfor %}
+       
+      </div>
+
+      <div class="top-main">
+      {% set category = categories_info|slice(4, 1)|first %}
+        <h1 class="caption caption_h1 top-main__caption top-main__caption_teaching">
+          <a href="/articles/{{category.url}}">{{category.title}}</a>
+        </h1>
+        <div class="top-main-buttons">
+          <a href="/articles/{{category.url}}" class="button button_outline top-main-buttons__more">Читать все <span
+              class="categories__amount">{{category.total}}+</span>
+          </a>
+        </div>
+      </div>
+      <ul class="top-menu">
+        <li class="top-menu__item">
+          <span data-url="category={{category.id}}" id="tab.education" 
+          class="top-menu__link top-menu__link_active">Все</span>
+        </li>
+      {% for subcategory in category.subcategory %}
+        <li class="top-menu__item">
+           <span data-url="category={{subcategory.id}}" 
+              id="tab.education-{{loop.index0}}" class="top-menu__link">{{subcategory.name}}</span>
+        </li>
+      {% endfor %}
+      </ul>
+
+        <ul class="similars tabcontent" itemscope itemtype="https://schema.org/ItemList">
+        {% for key, post in category.posts %}
+          <li class="similars__item">
+          <div class="similars-image"  itemprop="itemListElement" itemscope itemtype="https://schema.org/Article"
+         
+          style="background-image: url({{post.photo.medium}}">
+            <ul class="similars-list similars-list_empty">
+              <li class="similars-list__item similars-list__item_visibility">{{post.see}}<i></i></li>
+              <li class="similars-list__item similars-list__item_heart">{{post.likes}}<i></i></li>
+              <li class="similars-list__item similars-list__item_dislike">{{post.dislikes}}<i></i></li>
+              <li class="similars-list__item similars-list__item_comments">{{post.comments_count}}<i></i></li>
+            </ul>
+          </div>
+        </li>
+        <li class="similars__item"  itemprop="itemListElement" itemscope itemtype="https://schema.org/Article">
+          <div class="similars-image similars-image_zero">
+            <div class="similars-image-top similars-image-top_black">
+              <span class="similars-image-top__text similars-image-top__text_green">{{post.category}}</span>
+            </div>
+          </div>
+          <a href="{{post.url}}" itemprop="headline" class="similars__caption similars__caption_bigger">{{post.title}}</a>
+          <p class="similars__text">{{post.snippet}}</p>
+          <ul class="similars-details">
+            <li class="similars-details__item">
+              <a href="{{post.author_url}}" itemprop="author" itemscope itemtype="https://schema.org/Person">{{post.author}}</a>
+            </li>
+          </ul>
+        </li>
+        {% endfor %}
+      </ul>
+
+       <div class="top-main">
+       {% set category = categories_info|slice(5, 1)|first %}
+        <h1 class="caption caption_h1 top-main__caption top-main__caption_accessories">
+          <a href="/articles/{{category.url}}">{{category.title}}</a>
+        </h1>
+        <div class="top-main-buttons">
+          <a href="/articles/{{category.url}}" class="button button_outline top-main-buttons__more">Читать все <span
+              class="categories__amount">{{category.total}}>+</span>
+          </a>
+        </div>
+      </div>
+      <ul class="top-menu">
+        <li class="top-menu__item">
+          <span data-url="category={{category.id}}" id="tab.clothes" 
+          class="top-menu__link top-menu__link_active">Все</span>
+        </li>
+      {% for subcategory in category.subcategory %}
+        <li class="top-menu__item">
+            <span data-url="category={{subcategory.id}}" 
+              id="tab.clothes-{{loop.index0}}" class="top-menu__link">{{subcategory.name}}</span>
+        </li>
+      {% endfor %}
+      </ul>
+
+       <div class="top-images-center top-images-center_three tabcontent" itemscope itemtype="https://schema.org/ItemList">
+        {% for post in category.posts %}
+         <div class="similars-image"  itemprop="itemListElement" itemscope itemtype="https://schema.org/Article"
+          style="background-image: url({{post.photo.large}});">
+          <div class="similars-image-top similars-image-top_average">
+            <span class="similars-image-top__text similars-image-top__text_green">{{post.category}}</span>
+          </div>
+          <a href="{{post.url}}" class="big-image__caption big-image__caption_center">{{post.title}}</a>
+          <div class="big-image-bottom big-image-bottom_small big-image-bottom_center">
+            <ul class="big-image-list big-image-list_accessories">
+              <li class="big-image-list__item big-image-list__item_visibility">{{post.see}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_heart">{{post.likes}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_dislike">{{post.dislikes}}<i></i></li>
+              <li class="big-image-list__item big-image-list__item_comments 
+              big-image-list__item_small">{{post.comments_count}}<i></i></li>
+              <li>
+                <ul class="big-image-list big-image-list_sub big-image-list_fullwidth">
+                  <li class="big-image-list__item big-image-list__item_author">
+                    <a href="{{post.author_url}}" itemprop="author" itemscope itemtype="https://schema.org/Person">{{post.author}}</a>
+                  </li>
+                  <li class="big-image-list__item big-image-list__item_date">
+                    <time itemprop="datePublished" datetime="{{post.date}}>">{{post.date}}</time>    
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
+
+      </div>
+
+      {# <div class="main-proposal">
+        <span>Пример баннера</span>
+      </div> #}
+
+      <div class="top-main">
+      {% set category = categories_info|slice(6, 1)|first %}
+        <h1 class="caption caption_h1 top-main__caption top-main__caption_party">
+          <a href="/articles/{{category.url}}">{{category.title}}</a>
+        </h1>
+        <div class="top-main-buttons">
+          <a href="/articles/{{category.url}}" class="button button_outline top-main-buttons__more">Читать все <span
+              class="categories__amount">{{category.total}}+</span>
+          </a>
+        </div>
+      </div>
+      <ul class="top-menu">
+        <li class="top-menu__item">
+          <span data-url="category={{category.id}}" id="tab.parties" 
+          class="top-menu__link top-menu__link_active">Все</span>
+        </li>
+      {% for subcategory in category.subcategory %}
+        <li class="top-menu__item">
+            <span data-url="category={{subcategory.id}}" 
+              id="tab.parties-{{loop.index0}}" class="top-menu__link">{{subcategory.name}}</span>
+        </li>
+      {% endfor %}
+      </ul>
+
+       <ul class="similars tabcontent" itemscope itemtype="https://schema.org/ItemList">
+       {% for post in category.posts %}
+           <li class="similars__item">
+          <div class="similars-image" itemprop="itemListElement" 
+          itemscope itemtype="https://schema.org/Article"
+          style="background-image: url({{post.photo.medium}});">
+            <div class="similars-image-top">
+              <span class="similars-image-top__text">{{post.category}}</span>
+            </div>
+            <ul class="similars-list">
+              <li class="similars-list__item similars-list__item_visibility">{{post.see}}<i></i></li>
+              <li class="similars-list__item similars-list__item_heart">{{post.likes}}><i></i></li>
+              <li class="similars-list__item similars-list__item_dislike">{{post.dislikes}}<i></i></li>
+              <li class="similars-list__item similars-list__item_comments">{{post.comments_count}}<i></i></li>
+            </ul>
+          </div>
+          <a href="{{post.url}}" itemprop="headline" class="similars__caption">{{post.title}}</a>
+          <p class="similars__text">{{post.snippet}}</p>
+          <ul class="similars-details">
+            <li class="similars-details__item">
+              <a href="{{post.author_url}}" itemprop="author" itemscope itemtype="https://schema.org/Person">{{post.author}}</a>
+            </li>
+            <li class="similars-details__item similars-details__item_history"><i></i>
+              <time itemprop="datePublished" datetime="{{post.date}}">{{post.date}}</time> 
+            </li>
+          </ul>
+        </li>
+       {% endfor %}
+      </ul>
+
+    </div>
+  </div>
+{% include 'layouts/footer.twig' %}
+<script src="/bundles/js/allposts.js"></script>

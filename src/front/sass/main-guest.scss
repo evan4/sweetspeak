@@ -1,0 +1,29 @@
+@import './libs/normalize';
+
+@import './settings/my-reset';
+@import "./mixin";
+@import './media';
+@import './base';
+
+@import './libs/magnific/magnific';
+@import './libs/toaster';
+
+@import './components/button';
+
+@import './components/header/header';
+@import './components/header/header-menu';
+@import './components/header/header-menu-sub';
+
+@import './components/footer/footer';
+@import './components/footer/footer-socials';
+@import './components/footer/footer-subscribe';
+@import './components/footer/footer-form';
+@import './components/footer/footer-menu';
+
+@import './components/top';
+@import './components/top-menu';
+@import './components/big-image/big-image';
+@import './components/big-image/big-image-list';
+
+@import './components/form/form';
+@import './components/modal';

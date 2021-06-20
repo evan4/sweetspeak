@@ -1,0 +1,38 @@
+$fonts: 'fonts/';
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: local('Proxima Nova'), local('ProximaNova'),
+    url($fonts+'Proxima_Nova/Proxima Nova.woff2') format('woff2'),
+    url($fonts+'Proxima_Nova/Proxima Nova.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// html * {
+//     padding: 0;
+//     margin: 0;
+//     border: none;
+//     outline: none;
+// }
+// h1, h2, h3, h4, h5, h6, p {
+//     font-weight: inherit;
+//     line-height: inherit;
+//     font-size: inherit;
+//     padding: 0;
+//     margin: 0;
+// }
+
+// .blog{
+//     ._container {
+//         max-width: 1330px;
+//         width: 100%;
+//         margin: 0 auto;
+//         padding-right: 15px;
+//         padding-left: 15px;
+//     }
+   
+// }
+
+// @import './blog/about-top';
+

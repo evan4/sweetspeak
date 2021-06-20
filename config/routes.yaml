@@ -1,0 +1,380 @@
+home:
+    path: /
+    controller: controllers\IndexController::index
+    methods: GET
+
+search:
+    path:     /search
+    controller: controllers\SearchController::index
+    methods:    GET
+
+article_create:
+    path:     /article
+    controller: controllers\IndexController::article
+    methods:    GET
+
+blog:
+    path:     /for_experts
+    controller: controllers\IndexController::blog
+    methods:    GET
+
+articles_home:
+    path:     /articles
+    controller: controllers\IndexController::posts
+    methods:    GET
+
+changeVote:
+    path:     /changeVote
+    controller: controllers\ContentAjaxController::changeVote
+    methods:    GET
+
+category:
+    path:     /{category_slug}
+    controller: controllers\CategoryController::category
+    requirements:
+        category_slug: d_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m22|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_mg|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_mh|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_mg|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|parties
+    methods:    GET
+
+subcategory:
+    path:     /{category_slug}/{subcategory_slug}
+    controller: controllers\CategoryController::subcategory
+    requirements:
+        category_slug: d_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m22|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_mg|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_mh|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_mg|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|partiesd_and_m|relationships_in_pairs|interesting|bdsm_and_fetish|training|dress_and_accessories|parties
+    methods:    GET
+
+artiicle_page:
+    path:     /article/{article_slug}
+    controller: controllers\CategoryController::article
+    methods:    GET   
+
+getPosts:
+    path:     /getPosts
+    controller: controllers\IndexController::getPosts
+    methods:    GET
+
+privacy:
+    path:     /privacy
+    controller: controllers\IndexController::privacy
+    methods:    GET
+
+rules:
+    path:     /rules
+    controller: controllers\IndexController::rules
+    methods:    GET
+
+about:
+    path:     /about
+    controller: controllers\IndexController::about
+    methods:    GET
+
+authors:
+    path:     /authors
+    controller: controllers\AuthorController::index
+    methods:    GET
+
+author:
+    path:     /authors/{id}
+    controller: controllers\AuthorController::author
+    methods:    GET
+    
+author_articles:
+    path:     /authors/articles/{id}
+    controller: controllers\AuthorController::articles
+    methods:    GET
+
+dashboard:
+    path:     /dashboard
+    controller: controllers\DashboardController::index
+    methods:    GET
+    
+logout:
+    path:     /logout
+    controller: controllers\DashboardController::logout
+    methods:    GET
+    
+verifyEmail:
+    path:     /verifyEmail
+    controller: controllers\IndexController::verifyEmail
+    methods:    GET
+    
+recoveryPasswordSite:
+    path:     /recoveryPass
+    controller: controllers\IndexController::recoveryPass
+    methods:    GET
+    
+recoveryPasswordSitePost:
+    path:     /recoveryPassPost
+    controller: controllers\IndexController::recoveryPassword
+    methods:    POST
+
+sendComplain:
+    path:     /sendComplaint
+    controller: App\Controllers\HomeController::sendComplaint
+    methods:    POST
+
+instagram:
+    path:     /instagram
+    controller: App\Controllers\HomeController::instagram
+    methods:    POST
+
+changeTheme:
+    path:     /changeTheme
+    controller: App\Controllers\HomeController::changeTheme
+    methods:    POST
+
+proposal:
+    path:     /proposal
+    controller: App\Controllers\HomeController::proposal
+    methods:    POST
+
+checkEmailUniqueness:
+    path:     /checkEmailUniqueness
+    controller: App\Controllers\HomeController::checkEmailUniqueness
+    methods:    POST
+
+checkSlugUniqueness:
+    path:     /api/checkSlugUniqueness
+    controller: App\Controllers\HomeController::checkSlugUniqueness
+    methods:    POST
+
+auth:
+    path:     /auth
+    controller: App\Controllers\HomeController::auth
+    methods:    POST
+
+singup:
+    path:     /singup
+    controller: App\Controllers\HomeController::singup
+    methods:    POST
+
+recoveryPassword:
+    path:     /recoveryPassword
+    controller: App\Controllers\HomeController::recoveryPassword
+    methods:    POST
+
+friend_request:
+    path:     /friend_request
+    controller: App\Controllers\HomeController::friendRequest
+    methods:    POST
+    
+friends:
+    path:     /api/friends
+    controller: App\Controllers\Admin\FriendsController::index
+    methods:    POST
+    
+friends_requests:
+    path:     /api/friends/friendsRequests
+    controller: App\Controllers\Admin\FriendsController::friendsRequests
+    methods:    POST
+
+friend_accept:
+    path:     /api/friends/accept
+    controller: App\Controllers\Admin\FriendsController::accespFriendRequest
+    methods:    POST
+
+friend_delete:
+    path:     /api/friends/{id}
+    controller: App\Controllers\Admin\FriendsController::delete
+    methods:    DELETE
+
+
+currentUser:
+    path:     /currentUser
+    controller: App\Controllers\HomeController::getcurrentUser
+    methods:    POST
+
+currentUserDetailed:
+    path:     /api/currentUserDetailed
+    controller: App\Controllers\HomeController::getcurrentUserInfo
+    methods:    POST
+    
+subscribe:
+    path:     /api/subscribe
+    controller: App\Controllers\HomeController::subscribe
+    methods:    POST
+
+categories:
+    path:     /api/categories
+    controller: App\Controllers\Admin\CategoriesController::index
+    methods:    POST
+
+categories_create:
+    path:     /api/categories/create
+    controller: App\Controllers\Admin\CategoriesController::create
+    methods:    POST
+
+categories_update:
+    path:     /api/categories/update
+    controller: App\Controllers\Admin\CategoriesController::update
+    methods:    POST
+
+categories_delete:
+    path:     /api/categories/{id}
+    controller: App\Controllers\Admin\CategoriesController::delete
+    methods:    DELETE
+
+users:
+    path:     /api/users
+    controller: App\Controllers\Admin\UsersController::index
+    methods:    POST
+
+users_current:
+    path:     /api/users/getDetails
+    controller: App\Controllers\Admin\UsersController::current
+    methods:    POST
+    
+users_visibility:
+    path:     /api/users/changeUserVisibility
+    controller: App\Controllers\Admin\UsersController::changeUserVisibility
+    methods:    POST
+
+users_photos:
+    path:     /api/users/photos
+    controller: App\Controllers\Admin\UsersController::photos
+    methods:    POST
+   
+users_add_photo:
+    path:     /api/users/addPhhoto
+    controller: App\Controllers\Admin\UsersController::addPhhoto
+    methods:    POST
+
+users_remove_photo:
+    path:     /api/users/removePhhoto
+    controller: App\Controllers\Admin\UsersController::removePhhoto
+    methods:    POST
+
+users_update:
+    path:     /api/users/update
+    controller: App\Controllers\Admin\UsersController::update
+    methods:    POST
+
+users_delete:
+    path:     /api/users/delete
+    controller: App\Controllers\Admin\UsersController::delete
+    methods:    POST
+    
+articles:
+    path:     /api/articles
+    controller: App\Controllers\Admin\ArtlclesController::index
+    methods:    POST
+    
+getArticle:
+    path:     /api/articles/getArticle
+    controller: App\Controllers\Admin\ArtlclesController::getArticle
+    methods:    GET
+
+articles_create:
+    path:     /api/articles/create
+    controller: App\Controllers\Admin\ArtlclesController::create
+    methods:    POST
+    
+articles_updateStatus:
+    path:     /api/articles/updateStatus
+    controller: App\Controllers\Admin\ArtlclesController::updateStatus
+    methods:    POST
+
+articles_update:
+    path:     /api/articles/update
+    controller: App\Controllers\Admin\ArtlclesController::update
+    methods:    POST
+
+articles_delete:
+    path:     /api/articles/delete
+    controller: App\Controllers\Admin\ArtlclesController::delete
+    methods:    POST
+
+comments:
+    path:     /api/comments
+    controller: App\Controllers\Admin\CommentsController::index
+    methods:    POST
+
+comments_answers:
+    path:     /api/comments/getAnswers
+    controller: App\Controllers\Admin\CommentsController::getAnswers
+    methods:    POST
+
+comments_create:
+    path:     /api/comments/create
+    controller: App\Controllers\Admin\CommentsController::create
+    methods:    POST
+
+comments_approve:
+    path:     /api/comments/approve
+    controller: App\Controllers\Admin\CommentsController::approve
+    methods:    POST   
+
+comments_delete:
+    path:     /api/comments/{id}
+    controller: App\Controllers\Admin\CommentsController::delete
+    methods:    DELETE
+
+complains:
+    path:     /api/complaints
+    controller: App\Controllers\Admin\ComplaintsController::index
+    methods:    POST 
+
+complains_delete:
+    path:     /api/complaints/{id}
+    controller: App\Controllers\Admin\ComplaintsController::delete
+    methods:    DELETE
+
+messages:
+    path:     /api/messages
+    controller: App\Controllers\Admin\MessagesController::index
+    methods:    POST
+    
+messages_all:
+    path:     /api/getAllMessages
+    controller: App\Controllers\Admin\MessagesController::getAllMessages
+    methods:    POST
+
+messages_create:
+    path:     /api/messages/create
+    controller: App\Controllers\Admin\MessagesController::create
+    methods:    POST
+
+messages_author:
+    path:     /api/messages/authorMessages
+    controller: App\Controllers\Admin\MessagesController::authorMessages
+    methods:    POST
+
+messages_read:
+    path:     /api/messages/readMessage
+    controller: App\Controllers\Admin\MessagesController::readMessage
+    methods:    POST
+
+messages_delete:
+    path:     /api/messages/{id}
+    controller: App\Controllers\Admin\MessagesController::delete
+    methods:    DELETE
+    
+mailings:
+    path:     /api/mailings
+    controller: App\Controllers\Admin\MailingsController::index
+    methods:    POST
+    
+mailing_create:
+    path:     /api/mailings/create
+    controller: App\Controllers\Admin\MailingsController::create
+    methods:    POST
+    
+mailing_update:
+    path:     /api/mailings/update
+    controller: App\Controllers\Admin\MailingsController::update
+    methods:    POST
+
+mailing_email:
+    path:     /api/mailings/sendEmail
+    controller: App\Controllers\Admin\MailingsController::sendEmail
+    methods:    POST    
+    
+subscribers_total:
+    path:     /api/mailings/subscribers_total
+    controller: App\Controllers\Admin\MailingsController::subscribers_total
+    methods:    POST
+
+mailing_delete:
+    path:     /api/mailings/{id}
+    controller: App\Controllers\Admin\MailingsController::delete
+    methods:    DELETE
+    

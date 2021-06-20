@@ -1,0 +1,53 @@
+{% set sort_data = {'1': 'сегодня', '5': '5 дней', '30': 'месяц'} %}
+
+{% if '/search' in current_uri or '/author/articles' in current_uri %}
+    {% set search_page = true %}
+{% endif %}
+
+<form action="{{current_uri}}" method="get" id="filter">
+  <div class="form-block form-block_inline {{ search_page == false ? 'form-block_three' : '' }}">
+  {% if search_page %}
+   <input type="hidden" name="search" value="{{get.search|e}}">
+    <div class="form-block__filter">
+      <select name="categories" id="categories" class="subcategory">
+        <option value="">По категории</option>
+        {% for key,category  in session.all_categories.categories %}
+          <option value="{{category}}" {{(get.categories and category == get.categories) ? 'selected' : '' }}>{{key}}</option>
+        {% endfor %}
+      </select>
+    </div>
+   {% endif %}
+    <div class="form-block__filter">
+      <select name="datesort" id="datesort" class="subcategory">
+        <option value="">По дате</option>
+        {% for key, value in sort_data %}
+        {{key}}
+        <option value="{{key}}" {{(get.datesort and key == get.datesort) ? 'selected' : '' }}>{{value}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    
+    <div class="form-block__filter">
+      {% if 'ascending' in get.popularity|e or  'descending'  in get.popularity|e %}
+      <span class="form__input form__input_sort" aria-sort="{{get.popularity|e}}">По популярности</span>
+      <input type="text" name="popularity" class="hidden" value="{{get.popularity|e}}">
+      {% endif %}
+      <span class="form__input form__input_sort" aria-sort="ascending">По популярности</span>
+      <input type="text" name="popularity" class="hidden" value="ascending">
+    </div>
+
+    <div class="form-block__filter">
+    {% if get.comments %}
+      {% if 'ascending' in get.comments|e or  'descending'  in get.comments|e %}
+      <span class="form__input form__input_sort" aria-sort="{{get.comments|e}}">По комментариям</span>
+      <input type="text" name="comments" class="hidden" value="{{get.comments|e}}">
+      {% endif %}
+    {%  else %}
+      <span class="form__input form__input_sort" aria-sort="ascending">По комментариям</span>
+      <input type="text" name="comments" class="hidden">
+    {% endif %}
+    </div>
+    
+  </div>
+  <button class="button button_red form-comment__button" type="submit">Сортировать</button>
+</form>

@@ -1,0 +1,198 @@
+{% include 'layouts/header.twig' with {'title': title} %}
+ 
+ <div class="wrap">
+     <div class="wrap profile">
+      <div class="profile-left">
+        <img src="{{author.photo ?  '/bundles/users/1000_' ~ author.photo : '/bundles/img/no-photo.jpg' }}"  
+        alt="{{author.name}}" class="profile__photo image-responsive">
+        <ul class="profile-buttons">
+          {% if user_login == false %}
+          <li class="profile-buttons__item">
+            <a class="button button_red profile-buttons__button guest-registry" href="#registration"
+              title="Написать">
+              <i class="profile-buttons__message"></i><span class="profile-buttons__text">Написать сообщение</span>
+            </a>
+          </li>
+          {% endif %}
+        {% if user_login and author.id != session.User_info.id %}
+          <li class="profile-buttons__item">
+            <a class="button button_red profile__button profile-buttons__button" href="#message-form"
+            title="Написать">
+              <i class="profile-buttons__message"></i>
+            </a>
+          </li>
+          <li class="profile-buttons__item">
+            <a class="button button_red profile__button profile-buttons__button" href="#complain-form"
+            title="Пожаловаться">
+              <i class="profile-buttons__complain">></i>
+            </a>
+          </li>
+          <li class="profile-buttons__item">
+            {% if friend %}
+                <span class="button button_red profile-buttons__button" title="Пользователь ваш друг">
+                <i class="profile-buttons__friend"></i>
+              </span>
+            {% else %}
+             <a class="button button_red profile-buttons__button" title="Добавить в друзья"
+                data-id="{{author.id}}" id="friend">
+              <i class="profile-buttons__friend profile-buttons__friend_nofriend">></i>
+              </a>
+            {% endif %}
+          
+          </li>
+
+        {% endif %}
+        </ul>
+      </div>
+      <div class="profile-center">
+        <div class="profile-top">
+          <h2 class="caption caption_h2 profile__caption">{{author.name}}</h2>
+        </div>
+        <ul class="profile-list">
+          <li class="profile-list__item profile-list__item_available profile-list__item_active">{{author.userstatus}}</li>
+          <li class="profile-list__item profile-list__item_experience">На сайте {{author.standing}}</li>
+        </ul>
+        <div class="profile-status form__input">
+          <p class="form__label profile-status__label">Девиз:</p>
+          <p class="profile-status__text">{{author.motto}}</p>
+        </div>
+        <div class="profile-info">
+          <ul class="profile-info-list">
+            <li class="profile-info__item">
+              <span class="profile-info__label">Пол:</span>
+              <span class="profile-info__text">{{author.gender}}</span>
+            </li>
+            <li class="profile-info__item">
+              <span class="profile-info__label">Возраст:</span>
+              <span class="profile-info__text">{{author.age}}</span>
+            </li>
+            <li class="profile-info__item">
+              <span class="profile-info__label">Город:</span>
+              <span class="profile-info__text">{{author.city}}</span>
+            </li>
+            <li class="profile-info__item">
+              <span class="profile-info__label">Статус:</span>
+              <span class="profile-info__text">{{author.userstatus}}</span>
+            </li>
+          </ul>
+          <ul class="profile-info-list">
+            <li class="profile-info__item">
+              <span class="profile-info__label">Instagram:</span>
+              <span class="profile-info__text profile-info__text_link">
+                <a href="https://instagram.com/{{author.instagram}}" 
+                target="_blank">{{author.instagram}}</a>
+              </span>
+            </li>
+            <li class="profile-info__item">
+              <span class="profile-info__label">VK:</span>
+              <span class="profile-info__text profile-info__text_link">
+                <a href="https://vk.com/{{author.vk}}" target="_blank">{{author.vk}}</a></span>
+            </li>
+            <li class="profile-info__item">
+              <span class="profile-info__label">Facebook:</span>
+              <span class="profile-info__text profile-info__text_link">
+                <a href="https://facebook.com/{{author.facebook}}" target="_blank">{{author.facebook}}</a></span>
+            </li>
+            <li class="profile-info__item">
+              <span class="profile-info__label">Сайт:</span>
+              <span class="profile-info__text profile-info__text_link">
+                <a href="{{author.website}}" target="_blank">{{author.website}}</a></span>
+            </li>
+          </ul>
+
+        </div>
+        <div class="profile-description">
+          <p class="profile-description__label">О себе:</p>
+          <p class="profile-description__text">{{author.bio}}</p>
+        </div>
+      </div>
+      <div class="profile-right">
+        <aside class="aside">
+          <div class="profile-right__top">
+            <p class="aside__caption">Фотографии</p>
+          </div>
+          {% if author.users_photos %}
+            <div class="aside-gallery">
+            {% for photo in author.users_photos %}
+            <a href="{{photo.large}}" title="{{photo.title}}" class="aside-gallery__item">
+                <img src="{{photo.medium}}" width="80" height="80" alt="{{author.name}}">
+              </a>
+            {% endfor %}
+            </div>
+          {% endif %}
+        </aside>
+      </div>
+    </div>
+   {% if author.posts %}
+    <div class="wrap">
+      <div class="top-main">
+        <h3 class="caption caption_h3">Статьи пользователя:</h3>
+        <div class="top-main-buttons">
+          <a href="/authors/articles/{{author.id}}" class="button button_outline top-main-buttons__more">Читать все <span
+              class="categories__amount">{{author.articles}}+</span>
+          </a>
+        </div>
+      </div>
+      
+      <ul class="similars similars_profile">
+      {% for post in author.posts %}
+        <li class="similars__item">
+          <div class="similars-image" style="background-image: url({{post.photo.medium}});">
+            <div class="similars-image-top">
+              <span class="similars-image-top__text">{{post.category}}</span>
+            </div>
+            <ul class="similars-list">
+              <li class="similars-list__item similars-list__item_visibility">{{post.see}}<i></i></li>
+              <li class="similars-list__item similars-list__item_heart">{{post.likes}}<i></i></li>
+              <li class="similars-list__item similars-list__item_dislike">{{post.dislikes}}<i></i></li>
+              <li class="similars-list__item similars-list__item_comments">{{post.comments_count}}><i></i></li>
+            </ul>
+          </div>
+          <a href="{{post.url}}" class="similars__caption">{{post.title}}</a>
+          <p class="similars__text">{{post.snippet}}</p>
+          <ul class="similars-details">
+            <li class="similars-details__item">{{post.author}}</li>
+            <li class="similars-details__item similars-details__item_history"><i></i> {{post.date}}</li>
+          </ul>
+        </li>
+      {% endfor %}
+    
+      </ul>
+    </div>
+   {% endif %}
+ 
+  </main>
+  </div>
+  {#} modals form #}
+    {% if author.id != session.User_info.id %}
+    <div id="message-form" class="modal mfp-hide">
+    <p class="modal__caption">Сообщение</p>
+    <form action="" method="GET" class="modal-form" id="message-user">
+      <input type="hidden" name="ValidateFormAccess" value="{{session.ValidateFormAccess}}">
+      <input type="hidden" name="user_id" value="{{author.id}}">
+      <div class="modal-form-block modal-form-block_first">
+        <label for="message-body" class="modal-form__label">Сообщение</label>
+        <textarea name="body" id="message-body" rows="5" class="modal-form__textarea" required></textarea>
+      </div>
+      <button type="submit" class="button button_outline modal-form__submit">Отправить</button>
+    </form>
+  </div>
+
+  <div id="complain-form" class="modal mfp-hide">
+    <p class="modal__caption">Пожаловаться</p>
+    <form action="" method="GET" class="modal-form" id="complain-user">
+      <input type="hidden" name="ValidateFormAccess" value="{{session.ValidateFormAccess}}">
+      <input type="hidden" name="users_id" value="{{author.id}}">
+      <div class="modal-form-block modal-form-block_first">
+        <label for="body" class="modal-form__label">Текст</label>
+        <textarea name="body" id="body" rows="5" class="modal-form__textarea" required></textarea>
+      </div>
+      <button type="submit" class="button button_outline modal-form__submit">Отправить</button>
+    </form>
+  </div>
+  {% endif %}
+ </div>
+</main>
+</div>
+{% include 'layouts/footer.twig' %}
+<script src="/bundles/js/author.js"></script>

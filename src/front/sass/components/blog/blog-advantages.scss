@@ -1,0 +1,46 @@
+.blog-advantages{
+    position: relative;
+    padding: 0 1%;
+   
+    &-promise{
+        background-color: white;
+        border-radius: 10px;
+     
+    }
+    &-list{
+       
+        &__item{
+            overflow: hidden;
+        }
+        &__number{
+            margin: 0;
+        }
+        &__icon{
+            display: block;
+            border-radius: 50px;
+            width: 90px;
+            height: 90px;
+            background-color: $color-red;
+            background-repeat: no-repeat;
+            background-position: center;
+          
+            &_communicate{
+                background-image: url('../images/communicate.svg');
+            }
+            &_private{
+                background-image: url('../images/private.svg');
+            }
+            &_promotion{
+                background-image: url('../images/promotion.svg');
+            }
+        }
+        &__number{
+            font-size: 16px;
+        }
+        &__text{
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 20px;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.form-comment-auth {
+  display: none;
+  margin-bottom: 20px;
+
+  &__forbitten {
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border: 1px solid transparent;
+    border-color: #faebcc;
+    border-radius: 10px;
+  }
+
+}

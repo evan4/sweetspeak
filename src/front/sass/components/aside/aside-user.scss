@@ -1,0 +1,58 @@
+.aside-user {
+  margin-top: 19px;
+  text-align: center;
+
+  &-image {
+    position: relative;
+    width: 159px;
+    height: 159px;
+    margin: 0 auto;
+    
+    &__image {
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    width: 27px;
+    height: 27px;
+
+    right: 10px;
+    top: 10px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 12px;
+      width: 12px;
+      top: 25%;
+      left: 28%;
+      background-color: $color-white-always;
+      -webkit-mask-image: url('../images/pen.svg');
+      mask-image: url('../images/pen.svg');
+    }
+
+    &_profile {
+      position: relative;
+    }
+  }
+
+  &__name {
+    margin: 0;
+    padding: 20px 0 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__email {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 42px;
+    color: inherit;
+  }
+}

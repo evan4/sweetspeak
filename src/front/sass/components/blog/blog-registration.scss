@@ -1,0 +1,120 @@
+.blog-registration{
+    background-color: black;
+    color: white;
+
+    &__text{
+        padding: 44px 0;
+        border-top: 1px solid  #C4C4C4;
+        border-bottom: 1px solid #C4C4C4;
+        font-size: 20px;
+        line-height: 32px;
+        strong{
+            font-weight: 600;
+        }
+    }
+    &__form{
+        padding: 40px 45px;
+        border-radius: 10px;
+        background-color: $color-red;
+    }
+    &__caption{
+        text-align: center;
+    }
+    &__submit{
+        width: 100%;
+        margin: 10px 0 0 0;
+        position: relative;
+        border: 1px solid white;
+    }
+    &__checkboxlabel {
+        display: flex;
+        margin: 40px 0;
+        cursor: pointer;
+    }
+    fieldset {
+        position: relative;
+        height: 95px;
+        margin: 0px;
+        margin-bottom: 20px;
+        padding: 0px;
+        padding-top: 10px;
+        padding-left: 32px;
+        border: 1px solid rgba(255, 255, 255, 1);
+        border-radius: 47.5px;
+        color: #fff;
+    }
+    .control-label{
+        color: white;
+    }
+    legend {
+        padding-right: 19px;
+        padding-left: 14px;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 28px;
+    }
+    input:not([type=checkbox]) {
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        padding-left: 16px;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+        line-height: 37px;
+        background-color: transparent;
+        outline: none;
+    }
+    .visually-hidden {
+        left: -100vw;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0 0 0 0);
+    }
+    
+    
+    input[type="checkbox"]:checked+.checkbox-analog::after {
+        display: block;
+    }
+
+    .checkbox-analog {
+        position: relative;
+        display: block;
+        min-width: 18px;
+        height: 18px;
+        margin-right: 17px;
+        border-radius: 50%;
+        background-color: #fff;
+        &:after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+          
+            display: none;
+            width: 8px;
+            height: 4px;
+            margin-top: -2px;
+            margin-left: -4px;
+            border-bottom: 2px solid $color-red;
+            border-left: 2px solid $color-red;
+            border-radius: 1px;
+          
+            transform: rotate(-45deg);
+          
+            content: "";
+          }
+    }
+
+
+
+    .checkbox-text {
+        color: #fff;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

@@ -1,0 +1,27 @@
+.aside-gallery {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  
+  &__item {
+    width: 79px;
+    height: 79px;
+    text-align: center;
+    border-radius: 20px;
+    margin-right: 7px;
+    margin-bottom: 7px;
+
+    &:nth-child(9){
+      background-color: $color-red;
+      color: $color-white;
+      line-height: 70px;
+    }
+
+    img {
+      width: 75px;
+      border-radius: 15px;
+      color: $color-black;
+    }
+  }
+}

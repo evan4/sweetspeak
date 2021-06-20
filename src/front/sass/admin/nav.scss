@@ -1,0 +1,77 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: $color-black;
+  background-color: $color-white;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  text-decoration: none;
+  color: $color-white-always;
+  background-color: $color-red;
+}
+
+.nav-link.disabled {
+  color: $color-black;
+  pointer-events: none;
+  cursor: default;
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+
+.nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: 0.35rem;
+  border-top-right-radius: 0.35rem;
+}
+
+
+.nav-tabs .nav-link.disabled {
+  color: $color-black;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: $color-white-always;
+  background-color: $color-red;
+}
+
+.nav-tabs .dropdown-menu {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0.35rem;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  color: $color-white-always;
+  background-color: $color-red;
+}
+
+.nav-fill .nav-item {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.nav-justified .nav-item {
+  flex-basis: 0;
+  flex-grow: 1;
+  text-align: center;
+}

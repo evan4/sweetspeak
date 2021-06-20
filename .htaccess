@@ -1,0 +1,105 @@
+<IfModule mod_deflate.c>
+# Insert filters / compress text, html, javascript, css, xml:
+# mod_deflate can be used for Apache v2 and later and is the recommended GZip mechanism to use
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/javascript
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE text/vtt 
+AddOutputFilterByType DEFLATE text/x-component
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/js
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/x-httpd-php
+AddOutputFilterByType DEFLATE application/x-httpd-fastphp
+AddOutputFilterByType DEFLATE application/atom+xml 
+AddOutputFilterByType DEFLATE application/json
+AddOutputFilterByType DEFLATE application/ld+json 
+AddOutputFilterByType DEFLATE application/vnd.ms-fontobject 
+AddOutputFilterByType DEFLATE application/x-font-ttf 
+AddOutputFilterByType DEFLATE application/x-web-app-manifest+json 
+AddOutputFilterByType DEFLATE font/opentype 
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE image/x-icon 
+
+# Exception: Images
+SetEnvIfNoCase REQUEST_URI \.(?:gif|jpg|jpeg|png)$ no-gzip dont-vary
+
+# Drop problematic browsers
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+
+# Make sure proxies don't deliver the wrong content
+<IfModule mod_headers.c>
+Header append Vary User-Agent env=!dont-vary
+</IfModule>
+
+</IfModule>
+
+<IfModule mod_rewrite.c>
+
+RewriteEngine on
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) index.php?$1 [L,QSA]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ http://sweetspeak.ru [R=301,L]
+
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+
+RewriteCond %{THE_REQUEST} \s[^?]*//
+RewriteRule ^.*$ /$0 [R=301,L,NE]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ http://sweetspeak.ru/ [R=301,L]
+
+RewriteCond %{HTTPS} ^on$
+RewriteRule ^(.*)$ http://sweetspeak.ru/$1 [NC,L,R]
+
+RewriteCond %{REQUEST_URI} !\?
+RewriteCond %{REQUEST_URI} !\&
+RewriteCond %{REQUEST_URI} !\=
+RewriteCond %{REQUEST_URI} !\.
+RewriteCond %{REQUEST_URI} !\/$
+RewriteRule ^(.*[^\/])$ /$1/ [R=301,L]
+
+</IfModule>
+php_flag display_errors on
+php_value max_execution_time 600000
+
+<ifModule mod_expires.c>
+
+ ExpiresActive On
+ #кэшировать флэш и изображения
+ ExpiresByType image/jpg "access plus 365 days"
+ ExpiresByType image/jpeg "access plus 365 days"
+ ExpiresByType image/png "access plus 365 days"
+  ExpiresByType image/webp "access plus 365 days"
+  ExpiresByType image/svg+xml "access plus 365 days"
+ #кэшировать css, javascript и текстовые файлы
+ ExpiresByType text/css "access plus 365 days"
+ ExpiresByType text/javascript "access plus 365 days"
+ ExpiresByType application/javascript "access plus 365 days"
+ ExpiresByType application/x-javascript "access plus 365 days"
+ #кэшировать html и htm файлы на один день
+ ExpiresByType text/html "access plus 365 days"
+ #кэшировать xml файлы
+ ExpiresByType application/xhtml+xml "access plus 365 days"
+</ifModule>
+<FilesMatch "\.(webp|jpg|jpeg|png|gif|js|css|swg+xml)$">
+Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>

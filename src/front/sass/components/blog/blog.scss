@@ -1,0 +1,45 @@
+.blog{
+    &-wrap{
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    &__title{
+        font-weight: 600;
+    }
+
+    &__caption{
+        margin-top: 0;
+        font-weight: 600;
+        &_line{
+            &:after{
+                content: '';
+                margin: 20px 0;
+                width: 57px;
+                height: 2px;
+                display: block;
+                background-color: $color-red;
+            }
+        }
+    }
+    
+    .video-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 123px;
+        height: 123px;
+        margin-right: 37px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: linear-gradient(0deg, #ff3359, #ff3359), rgba(115, 53, 63, 0.6);
+        cursor: pointer;
+        span{
+            margin-left: 6px;
+            border-top: 11px solid transparent;
+            border-bottom: 11px solid transparent;
+            border-left: 20px solid #fff;
+        }
+    }
+}

@@ -1,0 +1,252 @@
+.similars {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 59px;
+
+  &_margin {
+    margin-top: 45px;
+  }
+
+  &__item {
+    width: 300px;
+    margin-bottom: 20px;
+
+    &_big {
+      width: 470px;
+      height: 378px;
+    }
+  }
+
+  &-image {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    border-radius: 15px;
+    padding: 13px 12px;
+
+    &-header {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &_zero {
+      padding-top: 0;
+      padding-left: 0;
+      padding-right: 1%;
+    }
+
+    &-block_first {
+      margin-bottom: 44px;
+    }
+
+    &__caption {
+      margin: 0;
+      padding: 12px 0 4px;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 24px;
+      color: inherit;
+      &:hover{
+        transition: color .2s ease-out;
+        color: $color-red;
+      }
+    }
+
+    &__text {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 23px;
+    }
+
+    &__author {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+      a{
+        color: inherit;
+        &:hover{
+          transition: color .2s ease-out;
+          color: $color-red;
+        }
+      }
+    }
+
+    &_center {
+      padding: 0;
+    }
+
+    &-top {
+      display: inline-block;
+      padding: 0 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50px;
+      color: $color-white-always;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 28px;
+      text-align: center;
+
+      &_black {
+        color: $color-black;
+        border: 1px solid $border-black;
+      }
+      &_empty{
+        height: 30px;
+        color: transparent;
+        border: 0;
+      }
+      
+      &_big {
+        margin-top: 29px;
+      }
+
+
+      &__text {
+        position: relative;
+        padding-left: 5px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 5px;
+          width: 5px;
+          border-radius: 10px;
+          background-color: $color-dark-red;
+          top: 4px;
+          left: -8px;
+        }
+
+        &_blue {
+          &:before {
+            background-color: #0091C8;
+          }
+        }
+
+        &_pink {
+          &:before {
+            background-color: #CD2DA0;
+          }
+        }
+
+        &_green {
+          &:before {
+            background-color: #4FCD3A;
+          }
+        }
+      }
+    }
+
+  }
+
+  &__caption {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: inherit;
+
+    &_bigger {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-right: 8%;
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    &:hover{
+      transition: color .2s ease-out;
+      color: $color-red;
+    }
+  }
+
+  &__text {
+    margin: 10px 0;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 23px;
+  }
+
+  &_profile {
+    margin-top: 20px;
+  }
+}
+
+@include media-breakpoint-up(xs) {
+  .similars-image-top_big {
+    margin-bottom: 400px;
+  }
+
+  .similars-image-top_small {
+    margin: 0 5px 160px;
+  }
+
+  .similars-image-top_tiny {
+    margin: 0 5px 130px;
+  }
+
+  .similars-image-top_black {
+    margin: 0;
+  }
+
+  .similars-image_center {
+    margin-top: 20px;
+  }
+
+  .similars-image-top_average {
+    margin-bottom: 170px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .similars-image-top_average {
+    margin-bottom: 140px;
+  }
+
+  .similars-image-top_small {
+    margin: 0 5px 150px;
+  }
+
+  .similars-image-top_tiny {
+    margin: 0 5px 160px;
+  }
+
+  .similars-image-top_black {
+    margin: 0;
+  }
+
+  .similars-image_center {
+    margin-top: 20px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .similars-image-top_big {
+    margin-bottom: 450px;
+  }
+
+  .similars-image-top_small {
+    margin: 0 5px 170px;
+  }
+
+  .similars-image_center {
+    margin-top: 20px;
+  }
+
+  .similars-image-top_average {
+    margin-bottom: 180px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+
+  .similars-image_center {
+    margin-top: 0;
+  }
+}

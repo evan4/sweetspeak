@@ -1,0 +1,39 @@
+.blog-top{
+    padding: 0 1%;
+    color: white;
+    background-color: #0C0C0C;
+   
+    overflow: hidden;
+    &__text{
+      span{
+        padding: 0 10px;
+        background-color: #584f4e;
+      }
+    }
+    &__registry{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 423px;
+        height: 81px;
+        padding-top: 25px;
+        padding-bottom: 26px;
+        border: 2px solid #ff3657;
+        border-radius: 50px;
+        color: white;
+        font-size: 20px;
+        line-height: 26px;
+        background: transparent;
+    }
+    .video-desc__text{
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 26px;
+      span{
+        font-weight: 400;
+      }
+    }
+ 
+}
+

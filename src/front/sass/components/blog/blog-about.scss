@@ -1,0 +1,49 @@
+.blog-about{
+    position: relative;
+    padding: 0 1%;
+    background-color: $color-black-always;
+    color: white;
+    &__caption{
+        font-weight: 600;;
+    }
+    .wrap{
+        z-index: 2;
+    }
+    &__desc{
+        font-size: 22px;
+        line-height: 32px;
+    }
+    &-list{
+        &__item{
+            font-size: 22px;
+            line-height: 32px;
+            strong{
+                font-weight: 600;
+            }
+        }
+
+        &__icon{
+            display: block;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: $color-red;
+            background-position: center;
+            background-repeat: no-repeat;
+        
+            &_info{
+                background-image: url('../images/info.svg');
+            }
+            &_opinion{
+                background-image: url('../images/shareOpinion.svg');
+            }
+            &_blast{
+                background-image: url('../images/blast.svg');
+            }
+            &_communicate{
+                background-image: url('../images/communicate.svg');
+            }
+        }
+    }
+}

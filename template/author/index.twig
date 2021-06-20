@@ -1,0 +1,52 @@
+{% include 'layouts/header.twig' with {'title': title} %}
+ 
+ <div class="wrap">
+     <div class="wrap wrap_main">
+      <div class="col-9">
+      <div class="top-main">
+      <h1 class="caption caption_h1">Список авторов</h1>
+      <div class="top-main-buttons">
+        <span class="button button_outline top-main-buttons__more button_text">Всего: <span class="categories__amount">{{authors.total}}+</span>
+        </span>
+      </div>
+    </div>
+    {% if authors.authors %}
+    <ul class="similars similars_margin">
+        {% for author in authors.authors %}
+        <li class="similars__item">
+        <div class="similars-image" style="background-image: url({{author.photo ? '/bundles/users/300_' ~ author.photo  : '/bundles/img/no-photo.jpg'}}">
+          {% if author.userstatus %}
+          <div class="similars-image-top similars-image-top_black">
+            <span class="similars-image-top__text similars-image-top__text_green">{{author.userstatus|slice(0, 20)}}</span>
+          </div>
+          {% else %}
+          <div class="similars-image-top similars-image-top_empty"></div>
+          {% endif %}
+          <ul class="similars-list">
+            <li class="similars-list__item similars-list__item_posts">{{author.posts}}<i></i></li>
+            <li class="similars-list__item similars-list__item_comments">{{author.comments}}<i></i></li>
+          </ul>
+        </div>
+        <p class="similars__text">{{author.motto}}</p>
+        <ul class="similars-details">
+          <li class="similars-details__item">
+            <a href="/authors/{{author.id}}" class="similars__caption">{{author.name}}</a>
+          </li>
+        </ul>
+      </li>
+        {% endfor %}
+    </ul>
+    {{authors.pagination|raw}}
+    </div>
+    {% else %}
+    <h4 class="caption caption_h4">По данному запросу ничего не найдено</h4>
+    </div>
+    {% endif %}
+      <div class="col-3 col-right">
+        {% include 'layouts/aside.twig' %}
+      </div>
+    </div>
+ </div>
+</main>
+</div>
+{% include 'layouts/footer.twig' %}

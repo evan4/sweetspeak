@@ -1,0 +1,21 @@
+{
+    "/bundles/js/about.js": "/bundles/js/about.js",
+    "/bundles/js/admin/main.js": "/bundles/js/admin/main.js",
+    "/bundles/css/day.css": "/bundles/css/day.css",
+    "/bundles/css/night.css": "/bundles/css/night.css",
+    "/bundles/css/guest-day.css": "/bundles/css/guest-day.css",
+    "/bundles/css/guest-night.css": "/bundles/css/guest-night.css",
+    "/bundles/css/admin-day.css": "/bundles/css/admin-day.css",
+    "/bundles/css/admin-night.css": "/bundles/css/admin-night.css",
+    "/bundles/css/blog.css": "/bundles/css/blog.css",
+    "/bundles/css/main.css": "/bundles/css/main.css",
+    "/bundles/js/allposts.js": "/bundles/js/allposts.js",
+    "/bundles/js/article-add.js": "/bundles/js/article-add.js",
+    "/bundles/js/author.js": "/bundles/js/author.js",
+    "/bundles/js/blog.js": "/bundles/js/blog.js",
+    "/bundles/js/filter.js": "/bundles/js/filter.js",
+    "/bundles/js/guest.js": "/bundles/js/guest.js",
+    "/bundles/js/indexPage.js": "/bundles/js/indexPage.js",
+    "/bundles/js/main.js": "/bundles/js/main.js",
+    "/bundles/js/postPage.js": "/bundles/js/postPage.js"
+}

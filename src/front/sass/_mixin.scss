@@ -1,0 +1,43 @@
+%micro-clearfix {
+
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+	font-size: $size; //Fallback in px
+	font-size: calculateRem($size);
+}
+
+%animate{
+		overflow: hidden;
+		position: relative;
+		transition: 1s ease-out;
+		z-index: 8;
+	
+		&:before {
+			-webkit-transition: 0.8s;
+			transition: 0.8s;
+			z-index: -1;
+		}
+	
+		&:hover {
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+			cursor: pointer;
+			transition-delay: $trans_delay;
+			color: white;
+		}
+}
+//@include fontSize(13px); rem

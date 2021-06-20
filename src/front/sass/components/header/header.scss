@@ -1,0 +1,225 @@
+.header {
+  width: 100%;
+  margin-bottom: 25px;
+  background: $background-header;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, .3);
+
+  .burger {
+    padding-left: 15px;
+    z-index: 2;
+    width: 58px;
+    height: 58px;
+    border: 0;
+    box-sizing: inherit;
+    background-color: $color-red;
+    cursor: pointer;
+
+    span {
+      position: relative;
+    }
+  }
+
+  .burger span,
+  .burger span::after,
+  .burger span::before {
+    display: block;
+    width: 35px;
+    height: 2px;
+
+    background-color: $color-white-always;
+
+    transition: 0.5s;
+    transition: 0.5s;
+
+    content: "";
+  }
+
+  .burger span::after,
+  .burger span::before {
+    position: absolute;
+  }
+
+  .burger span::before {
+    top: 14px;
+  }
+
+  .burger span::after {
+    bottom: 14px;
+  }
+
+  &-invert {
+    display: block;
+    width: 72px;
+    height: 38px;
+    padding: 5px 3px;
+    background: $color-white;
+    border-radius: 999px;
+
+    &__day {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      background: $background-day;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: $color-red;
+        -webkit-mask-image: url('../images/moon.svg');
+        mask-image: url('../images/moon.svg');
+        width: 15px;
+        height: 15px;
+        top: 7px;
+        left: 7px;
+      }
+    }
+
+    &__night {
+      margin: 0 auto;
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      background: $background-night;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: $color-444;
+        -webkit-mask-image: url('../images/sun.svg');
+        mask-image: url('../images/sun.svg');
+        width: 15px;
+        height: 15px;
+        top: 7px;
+        left: 7px;
+      }
+    }
+  }
+
+  &__profile {
+    display: flex;
+    justify-content: center;
+    width: 157px;
+    height: 38px;
+    padding: 5px 10px;
+    line-height: 26px;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &_outline {
+      width: 200px;
+      height: 49px;
+      padding: 11px 10px;
+      color: $color-red;
+      margin: 0;
+
+      span {
+        &::before {
+          background-color: $color-red;
+        }
+      }
+    }
+  }
+
+  &__span {
+    position: relative;
+    padding-left: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: 600;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: -7px;
+      height: 20px;
+      width: 20px;
+      background-color: $color-white-always;
+      -webkit-mask-image: url('../images/strawberry.svg');
+      mask-image: url('../images/strawberry.svg');
+    }
+  }
+}
+
+@include media-breakpoint-up(xs) {
+  .header_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1%;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+@include media-breakpoint-up(md) {}
+
+@include media-breakpoint-up(xl) {
+  .header {
+    display: block;
+
+    &-invert {
+      float: left;
+      margin-right: 5px;
+    }
+
+    &-menu {
+      float: left;
+      width: 80%;
+    }
+
+    &__profile {
+      float: right;
+
+      &_outline {
+        float: none;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .header_wrap {
+    margin: 0;
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  .header {
+    .burger {
+      display: none;
+    }
+
+    &-invert {
+      float: left;
+      margin-right: 1%;
+    }
+
+    &-menu {
+      float: left;
+      width: 80%;
+    }
+
+    &__profile {
+      float: right;
+
+      &_outline {
+        float: none;
+      }
+    }
+  }
+}

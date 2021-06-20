@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /*?*
+Disallow: /*%
+Disallow: /index.php
+Disallow: /*?page=
+Disallow: /*&page=
+Disallow: *?s=
+Disallow: *?p=
+Disallow: *?theme

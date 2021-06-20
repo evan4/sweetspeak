@@ -1,0 +1,62 @@
+{% include 'layouts/header.twig' with {'title': title} %}
+ 
+ <div class="wrap">
+    <div class="wrap wrap_main">
+        <div class="col-9">
+            <h1>Создать статью</h1>
+        <form action="" method="POST" class="form" id="article-create">
+            <input type="hidden" name="ValidateFormAccess" value="<?=$_SESSION['ValidateFormAccess']?>">
+            <div class="form-block">
+                <label for="article-title" class="form__label">Заголовок:<sup>*</sup></label>
+                <input type="text" minlength="5" maxlength="255" name="title" class="form__input" id="article-title" required>
+            </div>
+            <div class="form-block">
+                <label for="article-slug" class="form__label">Адрес статьи:</label>
+                <p class="form__tip">
+                    <small>Это поле генерируется автоматически, если вы его не заполнили</small>
+                </p>
+                <input type="text" maxlength="255"  autocomplete="off"
+                    title="только латинские буквы"
+                 name="slug" class="form__input" id="article-slug">
+            </div>
+            <div class="form-block">
+                <label for="article-snippet" class="form__label">Анонс статьи:<sup>*</sup></label>
+                <input type="text" minlength="20" maxlength="255" name="snippet" class="form__input" id="article-snippet" required>
+            </div>
+            <div class="form-block">
+                <label for="editor" class="form__label">Текст статьи<sup>*</sup></label>
+                <p class="form__tip">
+                    <small>Для формирования меню статьи, необходимо выделить нужные аункты как заголовок</small>
+                </p>
+                <textarea name="body" id="editor"></textarea>
+            </div>
+            <div class="form-block form-comment form-file">
+                <label for="photo" class="button button_outline button_outline_large form-comment__button">Выбрать изображение</label>
+                <input type="file" class="file-type" id="photo" name="photo" 
+                accept="image/jpeg, image/png, image/gif," required>
+                <p class="article-flie-name"></p>
+            </div>
+            <div class="form-block">
+                <label for="categories-article" class="form__label">Категория:<sup>*</sup></label>
+                <select name="categories" id="categories-article" required></select>
+            </div>
+            <div class="form-block">
+                <label for="subcategories-article" class="form__label">Подкатегория:<sup>*</sup></label>
+                <select name="subcategories" id="subcategories-article" required></select>
+            </div>
+            <button type="submit" class="button button_red form__button">Создать <i></i></button>
+        </form>
+        </div>
+        <div class="col-3 col-right">
+            {% include 'layouts/aside.twig' %}
+        </div>
+    </div>
+ </div>
+</main>
+</div>
+{% include 'layouts/footer.twig' %}
+
+<script>
+    window.categories = {{ session.all_categories|json_encode|raw }};
+</script>
+<script src="/bundles/js/article-add.js"></script>

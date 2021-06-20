@@ -1,0 +1,48 @@
+.header-menu-sub {
+  display: none;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  background-color: $color-white;
+
+  li {
+    position: relative;
+
+    &:hover {
+      background-color: $color-red;
+      transition: background-color 0.5s ease;
+      a {
+        color: $color-white-always;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    padding: 10px;
+    color: $color-dark;
+
+    &:hover {
+      color: $color-dark;
+      text-decoration: none;
+    }
+  }
+}
+@include media-breakpoint-up(xs) {
+  .header-menu-sub {
+    margin-top: 8px;
+    margin-bottom: -20px;
+    top: 100px;
+  }
+}
+@include media-breakpoint-up(xxl) {
+  .header-menu-sub {
+    position: absolute;
+    min-width: 180px;
+    margin: 0;
+    top: 35px;
+    left: 0;
+    z-index: 1;
+  }
+}

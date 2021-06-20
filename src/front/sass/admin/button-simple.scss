@@ -1,0 +1,38 @@
+.button-simple {
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+
+  &_red {
+    background-color: $color-red;
+    color: $color-white-always;
+    border: 0;
+    border-radius: 50px;
+  }
+
+  &_outline {
+    border: 1px solid $color-red;
+    border-radius: 50px;
+  }
+
+  &_plus {
+    position: relative;
+    width: 36px;
+    height: 36px;
+
+    i {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 16px;
+      height: 16px;
+      background-color: $color-white-always;
+      -webkit-mask-image: url('../images/plus-big.svg');
+      mask-image: url('../images/plus-big.svg');
+    }
+  }
+
+  &_text {
+    cursor: auto;
+  }
+}

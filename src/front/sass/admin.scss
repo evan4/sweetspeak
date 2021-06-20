@@ -1,0 +1,80 @@
+@import './admin/bootstrap-vue.css';
+@import "./admin/select/vue-select";
+
+@import './mixin';
+@import './media';
+
+@import './admin/col';
+@import './components/button';
+@import './components/form/form-comment';
+@import './components/aside/aside-user';
+@import './components/form/form';
+@import './components/form/form-comment';
+
+@import './admin/nav';
+@import './admin/table';
+@import './admin/button';
+@import './admin/base';
+@import './admin/button-simple';
+@import './admin/modal';
+@import './admin/alert';
+@import './admin/parination';
+@import './admin/list-group';
+@import './admin/progress';
+
+@import "./media";
+
+.mt-5,
+.my-5 {
+  margin-top: 3rem !important;
+}
+
+.mb-2,
+.my-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+.pb-2,
+.py-2 {
+  padding-bottom: 0.5rem !important;
+}
+.p-2 {
+  padding: 0.5rem !important;
+}
+
+.custom-file.b-form-file {
+  margin-bottom: 20px;
+  outline: 0;
+}
+
+.top-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-block {
+  position: relative;
+}
+
+.iconphoto {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+}
+
+ul {
+  font-size: 16px;
+}
+
+.messages{
+  max-height: 600px;
+  overflow-y: scroll;
+}

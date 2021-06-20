@@ -1,0 +1,288 @@
+{% include 'layouts/header.twig' with {'title': title,
+  'description': description} %}
+
+
+  <section class="video">
+    <div class="container video__wrapper guest-flex">
+      <div class="video-flex-left">
+        <h1 class="h1">Sweet Speak&nbsp;-</h1>
+        <p class="video__description">Это Social Media проект, созданный для <span class="video__accent">анонимного общения</span> на все возможные интимные темы.</p>
+        <a class="video-btn guest-registry" href="#registration" data-type="pos_aware">Зарегистрироваться</a>
+      </div>
+      <div class="video-flex-right">
+        <button class="video-button"><span></span></button>
+        <div class="video-desc">
+          <p><span>Посмотрите</span> короткое
+            видео о сервисе</p>
+          <p>01:23</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="close-society container">
+  <ul class="close-society-title">
+    <li>
+      <span class="circle"></span>
+    </li>
+    <li>
+      <h2 class="h2">Закрытое общество</h2>
+      <p class="close-society__intro">На нашем ресурсе вы можете поделиться тем, о чем не принято говорить в обществе: своими историями, знаниями, экспертностью, узнать что то новое и конечно завести новые знакомства</p>
+    </li>
+  </ul>
+  <div class="reg__wrapper d-flex">
+    <div class="reg__wrapper-left">
+      <p class="h2 registration__title">Пройдите быструю регистрацию</p>
+      <p>И вы сможете поделиться тем, о чем не принято говорить в обществе:</p>
+      <ul class="list-desc">
+        <li>своими историями</li>
+        <li>знаниями</li>
+        <li>экспертностью</li>
+        <li>узнать что то новое</li>
+        <li>и конечно завести новые знакомства </li>
+      </ul>
+    </div>
+    <div class="hand-with-phone__wrapper">
+      <figure class="hand-with-phone">
+        <img class="like-left" src="/bundles/images/dest/like1.svg" alt="like">
+        <img src="/bundles/images/dest/like2.svg" alt="like">
+        <img class="hand-with-phone-img" src="/bundles/images/dest/hand.webp" alt="hand">
+      </figure>
+    </div>
+
+    <form action="/singup" method="post" class="landing-registration">
+      <fieldset>
+        <legend >Ваше имя</legend>
+        <input type="text" name="name" 
+         placeholder="Ваше имя"
+        id="landing-registration_name" required>
+      </fieldset>
+      <fieldset>
+        <legend >Email</legend>
+        <input type="email" name="email"
+         placeholder="Ваш email"
+        id="landing-registration_email" required>
+      </fieldset>
+      <fieldset>
+        <legend>Пароль</legend>
+        <input type="password" name="password" id="landing-registration_password"
+        autocomplete="off"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Не менее восьми символов, содержащих хотя бы одну цифру и символы из верхнего и нижнего регистра"
+          required>
+        <i class="modal-form__show modal-form__show_big modal-form__show_white show-pass"></i>
+      </fieldset>
+      <label class="landing-modal-form__checkboxlabel">
+        <input type="checkbox" name="check" class="visually-hidden">
+        <span class="checkbox-analog"></span>
+        <span class="checkbox-text">
+          <span>Регистрируясь, вы принимаете условия обработки персональных данных пользователей Ознакомится с документом можно по</span>
+        </span>
+      </label>
+      <button class="submit button" type="submit" data-type="pos_aware">Быстрая регистрация</button>
+      <ul class="error error_white"></ul>
+    </form>
+  </div>
+</section>
+<section class="target-audience container">
+  <h2 class="h2">Для кого подойдет<br> <span>SweetSpeak?</span></h2>
+  <ul class="target-audience-ul d-flex">
+    <li>
+      <img class="img--dark" src="/bundles/images/dest/darktarget1.webp" alt="pick">
+      <p class="target-audience-title">Одиноким женщинам и мужчинам</p>
+      <p class="target-audience-desc">На нашем ресурсе вы можете поделиться тем, о чем не принято говорить в обществе:</p>
+    </li>
+    <li>
+      <img class="img--light" src="/bundles/images/dest/target3.webp" alt="pick">
+      <p class="target-audience-title">Парам в отношениях</p>
+      <p class="target-audience-desc">На нашем ресурсе вы можете поделиться тем, о чем не принято говорить в обществе:</p>
+    </li>
+    <li>
+      <img class="img--dark" src="/bundles/images/dest/darktarget3.webp" alt="pick">
+      <p class="target-audience-title">Экспертам и площадкам</p>
+      <p class="target-audience-desc">На нашем ресурсе вы можете поделиться тем, о чем не принято говорить в обществе:</p>
+    </li>
+  </ul>
+</section>
+<section class="slider">
+  <div class="container">
+    <h2 class="h2">Статьи сгруппированы по тематикам</h2>
+    <ul class="d-flex slider-circles-ul">
+      {%  for key, category in  session.all_categories.categories %}
+        <li>
+          <a href="/articles/{{category}}">
+            <span class="slider-circle"><img src="/bundles/images/dest/slidericon{{loop.index}}.svg" 
+            alt="{{category}}"></span>
+            <p>{{key}}</p>
+          </a>
+        </li>
+      {% endfor %}
+      <li>
+        <a href="/authors">
+          <span class="slider-circle">
+            <img src="/bundles/images/dest/slidericon8.svg" alt="authors">
+          </span>
+          <p>Все авторы</p>
+        </a>
+      </li>
+    </ul>
+    <div class="slider-block">
+      <div class="slider-ul">
+       {% for post in popularPosts %}
+     
+        <div>
+          <div class="slider-img__wrapper">
+            <img src="{{post.photo.medium}}" class="slider-img" alt="{{post.name}}">
+            <ul class="d-flex reactions">
+              <li>
+                <span>{{post.likes}}<img src="/bundles/images/dest/like.svg" alt="like"></span>
+              </li>
+              <li>
+                <span class="big-image-list__item big-image-list__item_dislike">{{post.dislikes}}<i></i></span>
+              </li>
+              <li>
+                <span>{{post.comments_count}}<img src="/bundles/images/dest/comment.svg" alt="comment"></span>
+              </li>
+            </ul>
+          </div>
+          <div class="slide__wrapper">
+            <p class="slider-ul-p-title"><a href="{{post.url}}">{{post.title|slice(0, 50)}}</a></p>
+            <p class="slider-ul-p-desc">{{post.snippet|slice(0, 50)}}</p>
+            <div class="d-flex avatar__wrapper">
+              <img src="{{ post.author_photo ? '/bundles/users/100_' ~ post.author_photo : '/bundles/img/no-photo.jpg' }}" 
+              class="slide-author-img"  alt="author">
+              <p class="nickname">
+                <a href="{{post.author_url}}" itemprop="author" itemscope itemtype="https://schema.org/Person">{{post.author}}</a>
+              </p>
+            </div>
+          </div>
+        </div>
+       {% endfor %}
+      </div>
+      <a class="btn-read-more" data-type="pos_aware" href="/articles">Читать все посты <span>{{totalPosts}}+</span></a>
+      <div class="create-account">
+        <p class="create-account-title">Создайте аккаунт бесплатно!</p>
+        <p class="create-account-desc">Читайте более 5000 интересных статей от пользователей, комментируйте и пишите
+          свои</p>
+        <a class="button button_red btn-create-account guest-registry"
+        href="#registration">Создать аккаунт</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="clearfix">
+  <section class="container rules">
+    <ul class="d-flex rules-wrapper">
+      <li class="rules-left">
+        <h2 class="h2">Вы можете найти ответы на все ваши вопросы, найти поддержку и единомышленников</h2>
+        <p>Лучше узнать себя, преобрести уверенность в общении на интимные темы</p>
+      </li>
+      <li class="rules-right">
+        <p>Мы против проституции, порнографии и любого негатива, все посты и статьи проверяются модераторами. Присутствует минимальная цензура</p>
+        <a data-type="pos_aware" href="/rules">Читать правила ресурса</a>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<section class="registration">
+  <div class="container d-flex registration__container">
+    <div class="d-flex">
+      <h2 class="h2">Ну и конечно общение и знакомства!</h2>
+      <form action="/singup" method="post" class="landing-registration">
+        <fieldset>
+          <legend>Ваше имя</legend>
+          <input type="text" name="name" 
+          placeholder="Ваше имя"
+          id="landing-registration_name_bottom" required>
+        </fieldset>
+        <fieldset>
+          <legend>Email</legend>
+          <input type="email" name="email" 
+          placeholder="Ваш email"
+          id="landing-registration_email_bottom" required>
+        </fieldset>
+        <fieldset>
+          <legend>Пароль</legend>
+          <input type="password" name="password" id="landing-registration_password_bottom"
+            autocomplete="off"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Не менее восьми символов, содержащих хотя бы одну цифру и символы из верхнего и нижнего регистра"
+            id="registration_password" required>
+          <i class="modal-form__show modal-form__show_big show-pass"></i>
+        </fieldset>
+        <label class="landing-modal-form__checkboxlabel">
+          <input type="checkbox" name="check" class="visually-hidden">
+          <span class="checkbox-analog">
+            <span class="checkbox-analog__span"></span>
+          </span>
+          <span class="checkbox-text">
+            <span>Регистрируясь, вы принимаете условия обработки персональных данных пользователей</span>
+          </span>
+        </label>
+        <button type="submit" data-type="pos_aware" class="submit">Быстрая регистрация</button>
+        <ul class="error"></ul>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="private_office">
+  <div class="container">
+    <div class="private_office-left">
+      <p>Что я получу?</p>
+      <p class="caption_h2">На&nbsp;сайте удобный личный кабинет, в&nbsp;котором вы&nbsp;можете:</p>
+      <ul class="private_office-ul d-flex">
+        <li class="private_office-li d-flex">
+        <span class="circle">
+          <img src="/bundles/images/dest/privateicon1.svg" alt="photo"/></span>
+          <p class="private_office-p">Указать информацию о&nbsp;себе</p>
+        </li>
+        <li class="private_office-li d-flex">
+          <span class="circle">
+            <img src="/bundles/images/dest/privateicon2.svg" alt="photo"/>
+          </span>
+          <p class="private_office-p">Обновления по интересующим темам</p>
+        </li>
+        <li class="private_office-li d-flex">
+          <span class="circle">
+            <img src="/bundles/images/dest/privateicon3.svg" alt="photo"/>
+            </span>
+          <p class="private_office-p">Видеть своих подписчиков и подписываться</p>
+        </li>
+        <li class="private_office-li d-flex">
+          <span class="circle">
+            <img src="/bundles/images/dest/privateicon4.svg" alt="photo">
+          </span>
+          <p class="private_office-p">Видеть свои&nbsp;и&nbsp;чужие посты</p>
+        </li>
+      </ul>
+
+      <a class="private_office-btn guest-registry"
+        data-type="pos_aware" href="#registration">Зарегистрироваться сейчас</a>
+    </div>
+  </div>
+</div>
+
+{# <section class="container download">
+  <div class="download-wrapper">
+    <div class="download-right">
+      <h2 class="h2">Скачивайте наше приложение
+        на мобильные устройства:</h2>
+      <ul class="download-app d-flex">
+        <li><a href="" data-type="pos_aware">
+          <img src="/bundles/images/dest/appstore.svg" alt="photo">/
+            Скачать<br> в App Store
+          </a></li>
+        <li> <a href="" data-type="pos_aware"> <img src="/bundles/images/dest/googleplay.svg" alt="photo">/
+            Скачать<br> в Google Play
+          </a></li>
+      </ul>
+    </div>
+  </div>
+</section> #}
+
+</main>
+</div>
+</div>
+
+{% include 'layouts/footer.twig' %}

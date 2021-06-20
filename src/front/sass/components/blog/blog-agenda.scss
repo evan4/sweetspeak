@@ -1,0 +1,64 @@
+.blog-agenda{
+    background-color: white;
+    color: black;
+    &__text{
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 30px;
+    }
+    &-list{
+        &__item{
+            margin-bottom: 20px;
+        }
+        &__text{
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 26px;
+        }
+        &__icon{
+            position: relative;
+            border-radius: 50px;
+            width: 90px;
+            height: 90px;
+            background-color: $color-red;
+            background-repeat: no-repeat;
+            background-position: center;
+            &:before{
+                content: '';
+                position: absolute;
+                top: -20px;
+                right: -50px;
+                background: url('../images/first.svg');
+                background-repeat: no-repeat;
+                height: 42px;
+                width: 71px;
+            }
+            &_qna{
+                background-image: url('../images/qna.svg');
+                &:before{
+                    background: url('../images/first.svg');
+                    width: 60px;
+                }
+            }
+            &_tell{
+                background-image: url('../images/tell_story.svg');
+                &:before{
+                    background: url('../images/second.svg');
+                }
+            }
+            &_brainstorm{
+                background-image: url('../images/brainstorm.svg');
+                &:before{
+                    background: url('../images/third.svg');
+                }
+            }
+        }
+    }
+    &-promise{
+        background-color: #F5F1F1;
+        &__text{
+            font-weight: 600;
+        }
+    }
+}

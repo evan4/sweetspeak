@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru-Ru" xmlns="http://www.w3.org/1999/html">
+	<head itemscope itemtype="http://schema.org/WPHeader">
+		<meta charset="utf-8">
+		<title itemprop="headline">{{ title }}</title>
+		<meta property="og:title" content="{{ title }}"/>
+
+		<meta itemprop="description" name="description" content="{{description}}">
+		<meta property="og:description" content="{{ description }}"/>
+		<meta property="og:locale" content="ru_RU" />
+		<meta property="og:site_name" content="sweetspeak.ru" />
+		<meta property="og:type" content="website" />
+		<meta property='og:image' content='{{constant('DOMAIN_NAME')}}/bundles/images/dest/pair.png' />
+		<meta property="og:url" content="{{constant('DOMAIN_NAME')}}{{current_uri}}" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=0.86" name="viewport">
+		<meta name="yandex-verification" content="276c7892663f0745" />
+
+		<meta name="MobileOptimized" content="320">
+
+		<link rel="preconnect"  href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+		
+		{% set user_login = session.User|length ? true : false %}
+		
+		{% if user_login == false and  current_uri == '/' %}
+			{% if session.theme is defined and (session.theme == 'night') %}
+				{% set theme = 'guest-night' %}
+			{% else %}
+				{% set theme = 'guest-day' %}
+			{% endif %}
+		{% else %}
+			{% if session.theme is defined and (session.theme == 'night') %}
+				{% set theme = 'night' %}
+			{% else %}
+				{% set theme = 'day' %}
+			{% endif %}
+		{% endif %}
+
+		<link rel="stylesheet" type="text/css" href="/bundles/css/{{theme}}.css?ver={{ date().timestamp }}">
+
+		{% if user_login and 'dashboard' in current_uri %}
+			<meta name="user-email" content="{{session.User_info.email}}">
+			<link rel="stylesheet" type="text/css" href="/bundles/css/admin-{{theme}}.css?ver={{ date().timestamp }}>">
+		{% endif %}
+		
+		{% if 'for_experts' in current_uri %}
+		<link rel="stylesheet" type="text/css" href="/bundles/css/blog.css?ver={{ date().timestamp }}">
+		{% endif %}
+		
+		{% set categories = session.all_categories %}
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-PQ8F5N2');</script>
+		<!-- End Google Tag Manager -->
+	</head>
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQ8F5N2"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<div id="wrap">
+			<header class="header">
+				<div class="wrap">
+					<div class="header_wrap">
+						<button class="burger">
+							<span></span>
+						</button>
+						<div class="header-invert">
+							<a href="#" data-theme="night" class="theme-change header-invert__day"></a>
+							<a href="#" data-theme="day" class="theme-change header-invert__night"></a>
+						</div>
+						<ul class="header-menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
+							{% for key, category in categories['categories'] %}
+								<li class="header-menu__item">
+									<a href="{{category}}" class="header-menu__link">{{key}}</a>
+										<ul class="header-menu-sub">
+										{% for key_sub, value in categories['subcategories'][category] %}
+												<li>
+													<a itemprop="url" href="{{category}}/{{value}}">{{key_sub}}</a>
+												</li>
+										{% endfor %}
+										</ul>
+								</li>
+							{% endfor %}
+						</ul>
+
+						{% if user_login %}
+
+							{% if 'Dashboard' in current_uri %}
+							<span class="header__profile button button_red">
+								<span class="header__span">{{session.User[:14]}}</span>
+							</span>
+							{%  else %}
+							<a href="/dashboard"  class="header__profile button button_red">
+								<span class="header__span">{{session.User[:14]}}</span>
+							</a>
+							{% endif %}
+						{% else %}
+						<a href="#registry-form" class="header__profile button button_red">
+							<span class="header__span">Профиль</span>
+						</a>
+						{% endif %}
+					</div>
+				</div>
+				<ul class="header-menu-modile">
+				
+					{% for key, category in categories['categories'] %}
+						<li class="header-menu__item">
+							<a href="{{category}}" class="header-menu__link">{{key}}</a>
+								<ul class="header-menu-sub">
+									{% for key_sub, value in categories['subcategories'][category] %}
+										<li>
+											<a href="{{category}}/{{value}}">{{key_sub}}</a>
+										</li>
+									{% endfor %}
+								</ul>
+						</li>
+					{% endfor %}
+				</ul>
+			</header>
+			<main class="main">
+				<div class="wrap">
+					<div class="top clearfix">
+						{% if current_uri == '/' %}
+						<span class="top__logo"></span>
+						{% else %}
+						<a href="/" class="top__logo"></a>
+						{% endif %}
+						<form action="/search" method="get" class="top__form">
+							<input type="search" class="top__search" name="search" 
+							placeholder="Например, секс втроем" 
+							value="{{get.search|trim|escape|default('')}}">
+						</form>
+						 {% if user_login and ('/article' in current_uri == false ) %}
+							<a href="/article" class="button button_red top__add">
+							<i class="top__plus"></i>
+							<span>Добавить статью</span>
+							</a>
+						{% endif %}
+						<ul class="top-socials">
+							<li>
+								<a href="{{ constant('TELEGRAM') }}" rel="nofollow"
+								class="top-socials__link top-socials__link_telegram" target="_blank"></a>
+							</li>
+							<li>
+								<a href="{{ constant('INSTAGRAM') }}" rel="nofollow"
+								class="top-socials__link top-socials__link_instagram" target="_blank"></a>
+							</li>
+						</ul>
+					</div>
+				</div>

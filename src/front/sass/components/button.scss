@@ -1,0 +1,158 @@
+.button {
+  position: relative;
+  border-radius: 99px;
+  cursor: pointer;
+  font-weight: 600;
+
+  &__loading{
+    background-color: $color-red !important;
+    color: transparent !important;
+    -webkit-mask: url('../images/loading.svg') no-repeat center;
+    mask: url('../images/loading.svg') no-repeat center;
+    width: 10px;
+    height: 10px;
+  }
+
+  &_red {
+    background-color: $color-red;
+    color: $color-white-always;
+    border: 0;
+    @extend %animate;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50px;
+    }
+
+    &:hover {
+      color: $color-red;
+      i{
+        transition-delay: .4s;
+        background-color: $color-red;
+      }
+
+      span {
+        &::before {
+          transition-delay: .4s;
+          background-color: $color-red;
+        }
+      }
+
+      &:before {
+        transform: scale(30);
+        background: $color-white-always;
+        color: $color-red;
+      }
+    }
+  }
+
+  &_outline {
+    border: 1px solid $color-red;
+    @extend %animate;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      display: block;
+      width: 20px;
+      height: 20px;
+
+      border-radius: 50px;
+    }
+
+    &:hover {
+
+      i{
+        transition-delay: .4s;
+        background-color: $color-red;
+      }
+      
+      span, i {
+        &::before {
+          transition-delay: .4s;
+          background-color: $color-white-always;
+        }
+      }
+
+      &:before {
+        transform: scale(30);
+        background: $color-red;
+        color: $color-white-always;
+      }
+    }
+  }
+  
+  &_outlinered{
+    margin: 0 auto;
+   
+    @extend %animate;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      display: block;
+      width: 20px;
+      height: 20px;
+
+      border-radius: 50px;
+    }
+
+    &:hover {
+
+      i{
+        transition-delay: .4s;
+        background-color: $color-red;
+      }
+      
+      span, i {
+        &::before {
+          transition-delay: .4s;
+          background-color: $color-red;
+        }
+      }
+
+      &:before {
+        transform: scale(30);
+        background: white;
+        color: $color-red;
+      }
+    }
+  }
+
+  &_plus {
+    width: 36px;
+    height: 36px;
+
+    i {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 16px;
+      height: 16px;
+      background-color: $color-white-always;
+      -webkit-mask-image: url('../images/plus-big.svg');
+      mask-image: url('../images/plus-big.svg');
+    }
+  }
+
+  &_text {
+    cursor: default !important;
+  }
+  
+  &_submit{
+    margin: 10px 0;
+  }
+}

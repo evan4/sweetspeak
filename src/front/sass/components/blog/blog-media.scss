@@ -1,0 +1,496 @@
+@include media-breakpoint-up(xs) {
+    .blog__title{
+        font-size: 40px;
+    }
+    .blog__caption{
+      font-size: 25px;
+      
+    }
+    .blog-top__text {
+      font-size: 22px;
+      line-height: 1.5;
+    }
+    .blog-top-block{
+        padding-top: 20px;
+        padding-bottom: 29px;
+    }
+    .blog-top__registry{
+      font-size: 18px;
+      margin: 10px 0;
+      &::after {
+        margin-left: 10px;
+      }
+    }
+
+    .blog-top{
+        background-position: center right;
+    }
+    .blog-about{
+      padding: 20px 0;
+      &__desc{
+        line-height: 1.5;
+      }
+      &__caption{
+        font-size: 22px;
+      }
+      &-list{
+        &__item{
+          margin-bottom: 10px;
+        }
+        
+        &__icon{
+          display: none;
+        }
+      }
+    }
+    .blog-advantages{
+      &__wrap{
+        padding-top: 20px;
+      }
+      &-list{
+        margin-top: 20px;
+        
+        &__item{
+            margin-bottom: 15px;
+        }
+        &__icon{
+          display: none;
+          margin-bottom: 20px;
+        }
+      }
+      &-promise{
+        &__text{
+          line-height: 1.2;
+        }
+      }
+    }
+    
+    .blog-advantages-promise{
+      padding: 5px;
+      text-align: center;
+    }
+    
+    .blog-agenda{
+      padding: 20px;
+      &-promise{
+        &__text{
+          padding: 40px;
+          font-size: 18px;
+          line-height: 1.5;
+        }
+      }
+      &-list__icon{
+        display: none;
+      }
+    }
+    .blog-registration{
+      padding: 20px 0 0 0;
+      &__left{
+        padding: 20px 1% 0;
+      }
+      &__submit{
+        i{
+          display: none;
+        }
+      }
+    }
+  }
+  
+  @include media-breakpoint-up(sm) {
+    
+    .blog__title{
+        font-size: 55px;
+    }
+    .blog__caption{
+      font-size: 25px;
+    }
+    .blog-top{
+      padding-bottom: 66px;
+      
+      &__text {
+        font-size: 32px;
+      }
+      &__registry{
+        max-width: 423px;
+        font-size: 20px;
+        &::after {
+          margin-left: 50px;
+          display: block;
+          width: 20px;
+          height: 15px;
+          background-color: $color-white-always;
+          -webkit-mask-image: url('../images/arrow.svg');
+          mask-image: url('../images/arrow.svg');
+          content: "";
+        }
+      }
+    }
+  
+    .blog .video-flex-right {
+        display: flex;
+        justify-content: flex-end;
+        width: 30%;
+        min-width: 380px;
+    }
+
+    .blog-about{
+      &__caption{
+        font-size: 30px;
+      }
+      &-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 50px;
+        &__item{
+          margin-bottom: 50px;
+          width: 300px;
+        }
+        &__icon{
+          display: block;
+        }
+      }
+    }
+    .blog-advantages-list__icon{
+      
+      float: left;
+      display: block;
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+    .blog-advantages-list__wrap{
+      float: left;
+      width: 80%;
+    }
+    .blog-advantages{
+      &-promise{
+        &__text{
+          line-height: 36px;
+          font-weight: 600;
+        }
+      }
+    }
+    .blog-agenda{
+      padding: 40px;
+      &-list__icon{
+        display: block;
+      }
+    }
+    .blog-registration{
+      fieldset {
+        padding-right: 59px;
+      }
+      &__submit{
+        i{
+          display: inline-block;
+        }
+      }
+    }
+  }
+  
+  @include media-breakpoint-up(md) {
+    .blog-top{
+      background-position: center;
+      background-image: url('../images/blog/blog1.webp');
+      background-repeat: no-repeat;
+      &__registry{
+        margin-top: 55px;
+        margin-bottom: 78px;
+      }
+    }
+    .blog-about{
+      padding-top: 110px;
+    }
+    .blog-top-block{
+        padding-top: 70px;
+    }
+    .blog__caption{
+      font-size: 32px;
+    }
+    .blog__title{
+      margin-bottom: 43px;
+    }
+
+    .blog-advantages{
+      background-image: url('../images/blog/blog3.webp');
+      background-repeat: no-repeat;
+      background-position: top center;
+      &-list{
+        width: 50%;
+        float: right;
+      }
+   
+    }
+
+    .blog-advantages{
+      position: relative;
+      
+      &-promise{
+        padding: 5px 30px 5px 70px;
+        background-position: 8% 40%;
+        background-image: url(../images/group.svg);
+        background-position: 2% 40%;
+        background-repeat: no-repeat;
+        &__text{
+          margin-left: 60px;
+          text-align: left;
+        }
+      }
+      &__desc{
+        margin-top: 50px;
+        margin-bottom: 60px;
+        font-size: 24px;
+        line-height: 34px;
+      }
+      &-list{
+        width: 100%;
+        float: none;
+      }
+    }
+
+    .blog-registration{
+      padding: 110px 0;
+      min-height: 1152px;
+      background-image: url('../images/blog/blog6.webp');
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      &__wrap{
+        display: flex;
+        justify-content: space-between;
+      }
+      &__left{
+        width: 40%;
+      }
+      &__text{
+        margin-top: 90px;
+      }
+      &__right{
+        width: 42%;
+      }
+      fieldset {
+        padding-right: 74px;
+      }
+    }
+  }
+  
+  @include media-breakpoint-up(lg) {
+
+    .blog__title{
+        font-size: 82px;
+        line-height: 1.2;
+    }
+    .blog__caption{
+      font-size: 42px;
+      line-height: 48px;
+      &:after{
+        margin: 40px 0;
+      }
+    }
+
+    .blog-top__text {
+      font-size: 42px;
+      line-height: 54px;
+    }
+    .blog-top-block{
+        float: right;
+        width: 50%;
+    }
+    .blog-about{
+      &__caption{
+        margin: 50px 0 0 0;
+        font-size: 36px;
+      }
+      &__wrap{
+        width: 80%;
+      }
+    }
+
+    .blog-advantages{
+      position: relative;
+      &__wrap{
+        width: 50%;
+        float: right;
+        padding-top: 80px;
+        padding-bottom: 170px;
+      }
+      &-promise{
+        padding: 5px 30px 5px 70px;
+        background-image: url(../images/group.svg);
+        background-position: 8% 40%;
+        background-repeat: no-repeat;
+        &__text{
+          margin-left: 60px;
+          text-align: left;
+        }
+      }
+      &__desc{
+        margin-top: 50px;
+        margin-bottom: 60px;
+        font-size: 24px;
+        line-height: 34px;
+      }
+      &-list{
+        margin-top: 20px;
+        
+        &__item{
+            margin-bottom: 5px;
+        }
+        &__icon{
+          float: left;
+          margin-right: 20px;
+          margin-bottom: 0;
+        }
+        &__wrap{
+          float: left;
+          width: 350px;
+        }
+      }
+    }
+    .blog-agenda{
+      margin-bottom: 115px;
+      padding: 50px 0 70px 65px;
+      background-image: url('../images/blog/blog4.webp');
+      background-position: right center;
+      background-repeat: no-repeat;
+      .blog__caption{
+        width: 630px;
+      }
+      &__text{
+        width: 425px;
+        padding-bottom: 52px;
+        margin-top: 25px;
+      }
+
+      &-list{
+        
+        &__item{
+          display: inline-block;
+          width: 250px;
+          margin-left: 20px;
+        }
+      }
+      &-promise{
+        min-height: 177px;
+        margin-right: 50px;
+        margin-top: 50px;
+        background-image: url('../images/blog/blog5.webp');
+        background-repeat: no-repeat;
+        background-position: 5% center;
+        &__text{
+          padding: 35px 0 0 330px;
+          font-size: 24px;
+          line-height: 36px;
+        }
+      }
+    }
+
+  }
+  
+  @include media-breakpoint-up(xl) {
+    .blog-about{
+      &__wrap{
+        width: 40%;
+      }
+      &-list{
+        width: 65%;
+      }
+    }
+    .blog-about{
+      height: 1164px;
+      &:after{
+        content: '';
+        position: absolute;
+        display: block;
+        top: -50px;
+        right: 0;
+        height: 1242px;
+        width: 1114px;
+        background-image: url(../images/blog/blog2.webp), url(../images/dest/text.svg);
+        background-position: 100% 0, center 10%;
+        background-repeat: no-repeat;
+      }
+    }
+    .blog-advantages{
+      background-position: top left;
+      &:before{
+        content: '';
+        position: absolute;
+        display: block;
+        top: -70px;
+        left: 30%;
+        height: 371px;
+        width: 556px;
+        background-image: url(../images/blog/socials.svg);
+        background-position: center top;
+        background-repeat: no-repeat;
+      }
+      &__wrap{
+        width: 47%;
+        float: right;
+        padding-top: 80px;
+        padding-bottom: 170px;
+      }
+      &__desc{
+        width: 90%;
+      }
+      &-promise{
+        margin-right: 50px;
+        background-position: 5% center;
+      }
+      &-list{
+        width: 100%;
+        float: none;
+        margin-top: 70px;
+        
+        &__item{
+            margin-bottom: 25px;
+        }
+      }
+      .blog-advantages-list__icon{
+        float: left;
+        margin-right: 40px;
+        margin-bottom: 0;
+      }
+      .blog-advantages-list__wrap{
+        float: left;
+        width: 400px;
+      }
+    }
+    
+    .blog-registration{
+      &__left{
+        padding: 0 1%;
+      }
+    }
+   
+  }
+  
+  @include media-breakpoint-up(xxl) {
+    .blog-top-block{
+        float: right;
+        width: 45%;
+    }
+    .blog-about{
+      &-list{
+        width: 50%;
+      }
+      &:after{
+        background-position: 70% 0, center 10%;
+      }
+    }
+ 
+    .blog-advantages{
+      &:before{
+        left: 23%;
+      }
+      &__wrap{
+        width: 45%;
+      }
+    }
+    .blog-registration{
+      &__left{
+        padding: 0;
+      }
+    }
+
+  }

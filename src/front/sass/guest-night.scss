@@ -1,0 +1,16 @@
+@import './libs/slick/slick';
+@import './settings/variables_dark';
+@import './media';
+@import './main-guest';
+
+.footer__copyright {
+  margin-bottom: 15px;
+}
+
+.footer__logo-maximus::before {
+  top: 55px;
+}
+
+@import './guest/main';
+
+@import './guest/media'

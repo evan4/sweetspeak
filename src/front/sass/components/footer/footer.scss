@@ -1,0 +1,104 @@
+.footer {
+  padding-top: 60px;
+  background-color: $color-white;
+
+  &__wrap {
+    padding: 0 1%;
+    div {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__copyright {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  &__logo-maximus {
+    position: relative;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    color: inherit;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 127px;
+      height: 47px;
+      background: url(../images/#{$footer-image});
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 35px;
+    }
+
+  }
+}
+@include media-breakpoint-up(xs) {
+  .footer {
+    padding-bottom: 40px;
+  }
+}
+@include media-breakpoint-up(md) {
+  .footer {
+    padding-bottom: 30px;
+    &__wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      div {
+        width: 49%;
+      }
+    }
+
+    &-menu_big {
+      padding: 0;
+    }
+
+    &-profile {
+      padding: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .footer {
+    &__wrap {
+      justify-content: space-between;
+
+      div {
+        width: 32%;
+      }
+
+      &-menu_big {
+        padding: 0;
+      }
+
+      &-profile {
+        padding: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .footer {
+
+      &__wrap {
+        div {
+          width: 24%;
+        }
+      }
+
+      &-menu_big {
+        padding: 0 3%;
+      }
+
+      &-profile {
+        padding: 0 0 0 5%;
+      }
+    }
+  }
+}

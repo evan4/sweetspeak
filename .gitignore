@@ -1,0 +1,9 @@
+bundles/*
+!bundles/images/
+!bundles/img/
+!bundles/js/libs/
+cache
+error.log
+node_modules
+sitemap.xml
+vendor

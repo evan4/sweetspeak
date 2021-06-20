@@ -1,0 +1,41 @@
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+  list-style: none;
+}
+
+.page-item {
+  &:not([class*="disabled"]):hover {
+    .page-link {
+      z-index: 1;
+      color: $color-white-always;
+      background-color: $color-red;
+    }
+  }
+
+  .page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: $color-pagination;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+
+  }
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: $color-white-always;
+  background-color: $color-red;
+}
+
+.page-item.disabled .page-link {
+  color: $color-black;
+  cursor: auto;
+}

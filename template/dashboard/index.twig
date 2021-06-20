@@ -1,0 +1,11 @@
+{% include 'layouts/header.twig' with {'title': 'Личный кабинет'} %}
+    <div id="app">
+        <div id="loading" style="min-height: 250px;width: 100%; position: relative;">
+            <img src="/bundles/images/load.gif" 
+                style="position: absolute;top: 50px; margin-left: -64px; left: 50%;" alt="load">
+        </div>
+    </div>
+  </main>
+  </div>
+{% include 'layouts/footer.twig' %}
+<script src="/bundles/js/admin/main.js?ver={{ date().timestamp }}"></script>

@@ -1,0 +1,5 @@
+{% include '/emails/layouts/email_header.twig' with {'title': title } %}
+<td valign="middle" class="intro bg_white" style="padding: 2em 0 4em 0;">
+{{body|raw}}
+</td>
+{{ include('/emails/layouts/email_footer.twig') }}

@@ -1,0 +1,18 @@
+{% include '/emails/layouts/email_header.twig' with {'title': 'Жаллоба на пользователя'} %}
+<td valign="middle" class="intro bg_white" style="padding: 2em 0 4em 0;">
+	<table>
+		<tbody>
+			<tr>
+				<td>
+					<div class="text" style="padding: 0 2.5em; text-align: center;">
+						<h2>Здравствуйте!</h2>
+            			<p>Поступила жалоба на пользователя <a href="{{user_url}}">{{user.name}}</a> от <a href="{{author_url}}">{{author_name}}</a></p>
+						<p>Ниже, сама жалоба:</p>
+						<p>{{msg}}</p>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</td>
+{{ include('/emails/layouts/email_footer.twig') }}
